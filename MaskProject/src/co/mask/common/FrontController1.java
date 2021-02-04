@@ -23,11 +23,11 @@ import co.mask.main.MainPage;
 import co.mask.main.Menu;
 
 @WebServlet("/FrontController")
-public class FrontController extends HttpServlet {
+public class FrontController1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Command> map = new HashMap<String, Command>();
 
-	public FrontController() {
+	public FrontController1() {
 		super();
 	}
 
