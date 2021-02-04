@@ -12,7 +12,7 @@ public class IdCheck implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// 아이디 중복 체크
 		MemberDao dao = new MemberDao();
-		String id = request.getParameter("id");
+		String id = request.getParameter("memberId");
 		boolean bool = dao.idCheck(id);
 		String message = null;
 		if (bool) {

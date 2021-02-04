@@ -76,8 +76,8 @@
 					</tr>
 					<tr>
 						<th>회원구분</th>
-						<td><input type="radio" id="memberAuth" name="memberAuth"  value="user" checked="checked">개인회원
-							<input type="radio" id="memberAuth" name="memberAuth"  value="seller">판매자</td>
+						<td><input type="radio" id="memberAuth" name="memberAuth"  value="USER" checked="checked">개인회원
+							<input type="radio" id="memberAuth" name="memberAuth"  value="SELLER">판매자</td>
 					</tr>
 				</table>
 			</div>
