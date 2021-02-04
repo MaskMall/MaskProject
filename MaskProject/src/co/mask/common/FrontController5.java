@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.mask.cart.web.BootPay;
 import co.mask.cart.web.CartView;
 import co.mask.join.web.IdCheck;
 import co.mask.join.web.Join;
@@ -41,6 +42,7 @@ public class FrontController5 extends HttpServlet {
 		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
 		//Cart
 		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
+		map.put("/bootPay.do", new BootPay());
 	}
 
 

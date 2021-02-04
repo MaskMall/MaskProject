@@ -45,10 +45,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">고객센터</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="joinForm.do">회원가입</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+
 
   <!-- Page Content -->
   <div class="container">
