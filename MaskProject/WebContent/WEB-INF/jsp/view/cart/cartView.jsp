@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="menu.do"></jsp:forward>
+	<h1>cartView 페이지</h1>
 </body>
 </html>
