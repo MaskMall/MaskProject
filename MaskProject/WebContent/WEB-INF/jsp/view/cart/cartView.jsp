@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>메인 페이지입니다.</h1>
-<jsp:forward page="menu.jsp"></jsp:forward>
+	<h1>cartView 페이지</h1>
 </body>
 </html>

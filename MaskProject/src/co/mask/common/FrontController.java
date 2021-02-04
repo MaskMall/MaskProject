@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.mask.cart.web.CartView;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
 
@@ -25,8 +25,10 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-//		map.put("/main.do", new MainPage());
+		map.put("/main.do", new MainPage());
 		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
+		//Cart
+		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
