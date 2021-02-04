@@ -20,7 +20,7 @@ public class CartView implements Command {
 		ArrayList<CartVo> list = new ArrayList<CartVo>();
 		HttpSession session = request.getSession();
 
-		vo.setCartUser((String) session.getAttribute("sMemberId"));
+		vo.setCartUser((String) session.getAttribute("memberId"));
 		list = dao.selectList(vo);
 		request.setAttribute("list", list);
 
