@@ -1,17 +1,17 @@
---BOARD TABLE »ý¼º
+--BOARD TABLE Â»Ã½Â¼Âº
 CREATE TABLE BOARD 
 (
-  "boardNumber" NUMBER NOT NULL 
-, "boardTitle" VARCHAR2(100 BYTE) NOT NULL 
-, "boardWriter" VARCHAR2(20 BYTE) NOT NULL 
-, "boardContent" VARCHAR2(1000 BYTE) NOT NULL 
-, "boardDate" DATE DEFAULT SYSDATE NOT NULL 
-, "boardHit" NUMBER DEFAULT 1 NOT NULL 
-, "boardLock" NUMBER DEFAULT 0 NOT NULL 
-, "boardValue" VARCHAR2(20 BYTE) NOT NULL 
+  boardNumber NUMBER NOT NULL 
+, boardTitle VARCHAR2(100 BYTE) NOT NULL 
+, boardWriter VARCHAR2(20 BYTE) NOT NULL 
+, boardContent VARCHAR2(1000 BYTE) NOT NULL 
+, boardDate DATE DEFAULT SYSDATE NOT NULL 
+, boardHit NUMBER DEFAULT 1 NOT NULL 
+, boardLock NUMBER DEFAULT 0 NOT NULL 
+, boardValue VARCHAR2(20 BYTE) NOT NULL 
 , CONSTRAINT BOARD_PK PRIMARY KEY 
   (
-    "boardNumber" 
+    boardNumber 
   )
   USING INDEX 
   (
@@ -46,16 +46,16 @@ STORAGE
 ) 
 NOPARALLEL;
 
---CART TABLE »ý¼º
+--CART TABLE Â»Ã½Â¼Âº
 CREATE TABLE CART 
 (
-  "cartNumber" NUMBER NOT NULL 
-, "cartUser" VARCHAR2(20 BYTE) NOT NULL 
-, "cartProduct" NUMBER NOT NULL 
-, "cartSelect" NUMBER DEFAULT 1 NOT NULL 
+  cartNumber NUMBER NOT NULL 
+, cartUser VARCHAR2(20 BYTE) NOT NULL 
+, cartProduct NUMBER NOT NULL 
+, cartSelect NUMBER DEFAULT 1 NOT NULL 
 , CONSTRAINT CART_PK PRIMARY KEY 
   (
-    "cartNumber" 
+    cartNumber 
   )
   USING INDEX 
   (
@@ -93,38 +93,38 @@ NOPARALLEL;
 ALTER TABLE CART
 ADD CONSTRAINT CART_FK1 FOREIGN KEY
 (
-  "cartUser" 
+  cartUser 
 )
 REFERENCES MEMBER
 (
-  "memberId" 
+  memberId 
 )
 ENABLE;
 
 ALTER TABLE CART
 ADD CONSTRAINT CART_FK2 FOREIGN KEY
 (
-  "cartProduct" 
+  cartProduct 
 )
 REFERENCES PRODUCT
 (
-  "productNumber" 
+  productNumber 
 )
 ENABLE;
 
---MEMBER TABLE »ý¼º
+--MEMBER TABLE Â»Ã½Â¼Âº
 CREATE TABLE MEMBER 
 (
-  "memberId" VARCHAR2(20 BYTE) NOT NULL 
-, "memberPassword" VARCHAR2(20 BYTE) NOT NULL 
-, "memberName" VARCHAR2(20 BYTE) NOT NULL 
-, "memberPhone" VARCHAR2(20 BYTE) NOT NULL 
-, "memberAddress" VARCHAR2(255 BYTE) 
-, "memberEmail" VARCHAR2(40 BYTE) 
-, "memberAuth" VARCHAR2(10 BYTE) DEFAULT NULL NOT NULL 
+  memberId VARCHAR2(20 BYTE) NOT NULL 
+, memberPassword VARCHAR2(20 BYTE) NOT NULL 
+, memberName VARCHAR2(20 BYTE) NOT NULL 
+, memberPhone VARCHAR2(20 BYTE) NOT NULL 
+, memberAddress VARCHAR2(255 BYTE) 
+, memberEmail VARCHAR2(40 BYTE) 
+, memberAuth VARCHAR2(10 BYTE) DEFAULT NULL NOT NULL 
 , CONSTRAINT MEMBER_PK PRIMARY KEY 
   (
-    "memberId" 
+    memberId 
   )
   USING INDEX 
   (
@@ -159,17 +159,17 @@ STORAGE
 ) 
 NOPARALLEL;
 
-----PRODUCT TABLE »ý¼º
+----PRODUCT TABLE Â»Ã½Â¼Âº
 CREATE TABLE PRODUCT 
 (
-  "productNumber" NUMBER NOT NULL 
-, "productName" VARCHAR2(100 BYTE) NOT NULL 
-, "productQunt" NUMBER NOT NULL 
-, "productPrice" NUMBER NOT NULL 
-, "ProductSeller" VARCHAR2(20 BYTE) NOT NULL 
+  productNumber NUMBER NOT NULL 
+, productName VARCHAR2(100 BYTE) NOT NULL 
+, productQunt NUMBER NOT NULL 
+, productPrice NUMBER NOT NULL 
+, ProductSeller VARCHAR2(20 BYTE) NOT NULL 
 , CONSTRAINT PRODUCT_PK PRIMARY KEY 
   (
-    "productNumber" 
+    productNumber 
   )
   USING INDEX 
   (
@@ -207,23 +207,23 @@ NOPARALLEL;
 ALTER TABLE PRODUCT
 ADD CONSTRAINT PRODUCT_FK1 FOREIGN KEY
 (
-  "ProductSeller" 
+  ProductSeller 
 )
 REFERENCES MEMBER
 (
-  "memberId" 
+  memberId 
 )
 ENABLE;
 
---SELL TABLE »ý¼º
+--SELL TABLE Â»Ã½Â¼Âº
 CREATE TABLE SELL 
 (
-  "sellNumber" NUMBER NOT NULL 
-, "sellProductnumber" NUMBER NOT NULL 
-, "sellDate" DATE DEFAULT SYSDATE NOT NULL 
+  sellNumber NUMBER NOT NULL 
+, sellProductnumber NUMBER NOT NULL 
+, sellDate DATE DEFAULT SYSDATE NOT NULL 
 , CONSTRAINT SELL_PK PRIMARY KEY 
   (
-    "sellNumber" 
+    sellNumber 
   )
   USING INDEX 
   (
@@ -261,11 +261,11 @@ NOPARALLEL;
 ALTER TABLE SELL
 ADD CONSTRAINT SELL_FK1 FOREIGN KEY
 (
-  "sellProductnumber" 
+  sellProductnumber 
 )
 REFERENCES PRODUCT
 (
-  "productNumber" 
+  productNumber 
 )
 ENABLE;
 
