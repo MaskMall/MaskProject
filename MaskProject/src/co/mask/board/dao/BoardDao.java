@@ -34,7 +34,7 @@ public class BoardDao extends DAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new BoardVo();
-				vo.setBoardNum(rs.getInt("boardnumber"));
+				vo.setBoardNumber(rs.getInt("boardnumber"));
 				vo.setBoardTitle(rs.getString("boardtitle"));
 				vo.setBoardWriter(rs.getString("boardwriter"));
 				vo.setBoardContent(rs.getString("boardcontent"));
@@ -58,10 +58,10 @@ public class BoardDao extends DAO {
 			String sql = "INSERT INTO BOARD " + "( BOARDNUM, BOARDWRITER, BOARDTITLE, BOARDCONTENT, BOARDFILE)"
 					+ "VALUES(?,?,?,?,?)";
 
-			int n = vo.getBoardNum();
+			int n = vo.getBoardNumber();
 
 			psmt = conn.prepareStatement(sql.toString());
-			psmt.setInt(1, vo.getBoardNum());
+			psmt.setInt(1, vo.getBoardNumber());
 			psmt.setString(2, vo.getBoardTitle());
 			psmt.setString(3, vo.getBoardWriter());
 			psmt.setString(4, vo.getBoardContent());
@@ -84,7 +84,7 @@ public class BoardDao extends DAO {
 		try {
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getBoardNum());
+			psmt.setInt(1, vo.getBoardNumber());
 			n = psmt.executeUpdate();
 
 		} catch (SQLException e) {
