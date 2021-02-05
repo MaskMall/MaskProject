@@ -19,27 +19,27 @@
 <body>
 
 	<br>
-	<b><font size="6" color="blue">글쓰기</font></b>
+	<div align="center"><h1>문의 게시판</h1></div>
 	<br>
 
 	<form method="post" action="BoardWriteAction.bo" name="boardForm" enctype="multipart/form-data">
 		<input type="hidden" name="board_id" value="${sessionScope.sessionID }">
-		<table width="700" border="3" align="center">
+		<table border="3" align="center">
 			<tr>
-				<td id="title">작성자</td>
+				<th width="300" id="title">작성자</td>
 				<td>${sessionScope.sessionID }</td>
 			</tr>
 			<tr>
-				<td id="title">제목</td>
-				<td><input name="board_subject" type="text" size="70"
+				<th width="150" id="title">제목</td>
+				<td><input name="board_subject" type="text" size="100%"
 					maxlength="100" value="" /></td>
 			</tr>
 			<tr>
-				<td id="title">내용</td>
-				<td><textarea name="#" rows="72" cols="20"></textarea></td>
+				<th width="150" id="title">내용</th>
+				<td><textarea name="#" rows="30" cols="100%"></textarea></td>
 			</tr>
 			<tr>
-				<td id="title">파일첨부</td>
+				<th width="150" id="title">파일첨부</td>
 				<td><input type="file" name="boardFile" /></td>
 			</tr>
 
