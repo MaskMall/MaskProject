@@ -139,4 +139,26 @@ public class BoardDao extends DAO {
 		return result;
 	}
 
+	public void select(BoardVo vo) {
+		String sql1 = "SELECT * FROM BOARD WHERE BOARDNUMBER=?";
+		try {
+			psmt = conn.prepareStatement(sql1);
+			psmt.setInt(1, vo.getBoardNumber());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				vo.setBoardNumber(rs.getInt("boardnumber"));
+				vo.setBoardTitle(rs.getString("boardtitle"));
+				vo.setBoardWriter(rs.getString("boardwriter"));
+				vo.setBoardContent(rs.getString("boardcontent"));
+				vo.setBoardDate(rs.getDate("boarddate"));
+				vo.setBoardHit(rs.getInt("boardhit"));
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	
+	}
+
 }

@@ -30,7 +30,7 @@ import co.mask.product.web.UpdateExec;
 import co.mask.sell.web.SellView;
 
 
-@WebServlet("/FrontController5")
+@WebServlet("/FrontController2")
 public class FrontController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Command> map = new HashMap<String, Command>();

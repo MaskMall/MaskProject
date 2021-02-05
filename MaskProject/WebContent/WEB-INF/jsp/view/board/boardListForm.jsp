@@ -47,10 +47,9 @@
 					<th>작성자</th>
 					<th>작성일</th>
 					<th>조회수</th>
-					
 				</tr>
 				<c:forEach var="vo" items="${list }">
-				<tr>
+				<tr id="${vo.boardNumber }" onclick="location.href='boardView.do?boardNumber=${vo.boardNumber }'">
 				<td align="center">${vo.boardNumber }</td>
 				<td align="center">${vo.boardTitle }</td>
 				<td align="center">${vo.boardWriter }</td>
