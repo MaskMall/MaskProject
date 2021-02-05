@@ -49,7 +49,7 @@
 					<th>조회수</th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
-				<tr id="${vo.boardNumber }" onclick="location.href='boardView.do?boardNumber=${vo.boardNumber }'">
+				<tr id="${vo.boardNumber }" onclick="location.href='boardView.do'">
 				<td align="center">${vo.boardNumber }</td>
 				<td align="center">${vo.boardTitle }</td>
 				<td align="center">${vo.boardWriter }</td>
