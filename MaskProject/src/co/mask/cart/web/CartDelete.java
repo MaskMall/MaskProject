@@ -7,20 +7,18 @@ import co.mask.cart.dao.CartDao;
 import co.mask.cart.vo.CartVo;
 import co.mask.common.Command;
 
-public class BootPay implements Command {
+public class CartDelete implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 부트페이 결제 시스템
+		// 장바구니 삭제
 		CartDao dao = new CartDao();
 		CartVo vo = new CartVo();
 		vo.setCartNumber(Integer.parseInt(request.getParameter("cartNumber")));
-		vo.setCartUser(request.getParameter("cartUser"));
 		
-		dao.select(vo);
-		request.setAttribute("vo", vo);
+		dao.delete(vo);
 		
-		return "view/cart/bootPay";
+		return "cartView.do";
 	}
 
 }

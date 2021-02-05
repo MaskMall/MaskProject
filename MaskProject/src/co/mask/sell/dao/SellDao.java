@@ -12,19 +12,24 @@ public class SellDao extends DAO {
 	private PreparedStatement psmt;
 	private ResultSet rs;
 
-	public ArrayList<SellVo> selectList() { // 판매완료 상품 목록 리스트
+	public ArrayList<SellVo> selectList(SellVo vo) { // 판매완료 상품 목록 리스트
 		ArrayList<SellVo> list = new ArrayList<SellVo>();
-		SellVo vo;
-		String sql = "SELECT * FROM SELL";
+		String sql = "SELECT * FROM SELL s, product p, member m where m.memberid = ? and s.sellproductnumber = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberId());
+			psmt.setInt(2, vo.getProductNum());
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new SellVo();
 				vo.setSellNum(rs.getInt("sellnum"));
 				vo.setSellProductNum(rs.getInt("sellproduct"));
 				vo.setSellDate(rs.getDate("selldate"));
+				vo.setProductName(rs.getString("productname"));
+				vo.setProductPrice(rs.getInt("productprice"));
+				vo.setProductSeller(rs.getString("prodcutseller"));
+				
 				list.add(vo);
 			}
 		} catch (SQLException e) {
