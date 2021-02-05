@@ -58,29 +58,33 @@ body {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
+
             <a class="nav-link" href="showProduct.do">마스크 구매하기
+
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="loginForm.do">로그인</a>
           </li>
+
            <c:if test="${memberId eq null}">
-          
+
           <li class="nav-item active">
             <a class="nav-link" href="joinForm.do">회원가입</a>
           </li>
+
           </c:if>
           <c:if test="${memberId != null and memberAuth != null}">
           <li class="nav-item active">
-            <a class="nav-link" href="#">마이페이지</a>
+            <a class="nav-link" href="#">내정보!</a>
           </li>
           </c:if>
           <li class="nav-item active">
             <a class="nav-link" href="cartView.do">장바구니</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="test.do">고객센터</a>
+            <a class="nav-link" href="boardListForm.do">문의페이지</a>
           </li>
 
         </ul>

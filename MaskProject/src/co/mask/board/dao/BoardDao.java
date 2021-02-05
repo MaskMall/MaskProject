@@ -1,15 +1,31 @@
 package co.mask.board.dao;
 
-import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement; 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.management.RuntimeErrorException;
 
 import co.mask.board.vo.BoardVo;
 import co.mask.common.DAO;
 
 public class BoardDao extends DAO{
+	
+	private Connection conn;
 	private PreparedStatement psmt;
 	private ResultSet rs;
+	
+	private static BoardDao instance;
+	
+	private BoardDao(){}
+	
+		public static BoardDao getInstance() {
+			if(instance==null)
+				instance=new BoardDao();
+			return instance;
+		}
 	
 	
 	public int select(BoardVo vo) {
@@ -28,21 +44,23 @@ public class BoardDao extends DAO{
 	}
 	
 	
-	public int insertBoard(BoardVo vo) {
+	public boolean boardInsert(BoardVo vo) {
 		// 글쓰기
-		int n = 0;
-		String sql ="INSERT INTO BOARD "
-				+ "( BOARDNUM, BOARDWRITER, BOARDCONTENT, BOARDDATE, BOARDLOCK,BOARDVALUE)"
-				+ "VALUES(?,?,?,?,SYSDATE,?,?)";
+		boolean result = false;
+		
 		try {
-			psmt = conn.prepareStatement(sql);
+			String sql ="INSERT INTO BOARD "
+					+ "( BOARDNUM, BOARDWRITER, BOARDTITLE, BOARDCONTENT, BOARDFILE)"
+					+ "VALUES(?,?,?,?,?)";
+			
+			int n = vo.getBoardNum(); 
+			
+			psmt = conn.prepareStatement(sql.toString());
 			psmt.setInt(1, vo.getBoardNum());
 			psmt.setString(2, vo.getBoardTitle());
 			psmt.setString(3, vo.getBoardWriter());
 			psmt.setString(4, vo.getBoardContent());
-			psmt.setDate(5, vo.getBoardDate());
-			psmt.setInt(6, vo.getBoardLock());
-			psmt.setString(7, vo.getBoardValue());
+			psmt.setString(5, vo.getBoardFile());
 			
 			n = psmt.executeUpdate();
 			
@@ -51,7 +69,7 @@ public class BoardDao extends DAO{
 		}finally {
 			close();
 		}
-		return n;
+		return result;
 	}
 	
 	public int deleteBoard(BoardVo vo) {
@@ -78,6 +96,10 @@ public class BoardDao extends DAO{
 	}
 	
 	
+//	public ArrayList<BoardVo> getBoardList
+	
+	
+	
 	public void close() { //close 메소드
 		try {
 			if(rs != null) rs.close();
@@ -87,4 +109,33 @@ public class BoardDao extends DAO{
 			e.printStackTrace();
 		}
 	}
+
+
+
+	public int getSeq() {
+		int result = 1;
+		
+		try {
+			conn = DBConnection.getConnection();
+			
+			//시퀀스 값을 가져온다 (dual: 시퀀스값 가져오는 임시테이블)
+			StringBuffer sql = new StringBuffer();
+			sql.append("SELECT BOARDNUMBER.NEXTVAL FROM DUAL");
+			
+			psmt = conn.prepareStatement(sql.toString());
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) result = rs.getInt(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		close();
+		
+		return result;
+	}
+
+
+
 }
