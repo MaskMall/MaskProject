@@ -80,6 +80,11 @@ body {
             <a class="nav-link" href="#">내정보!</a>
           </li>
           </c:if>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="adminForm.do">관리자</a>
+          </li>
+
           <li class="nav-item active">
             <a class="nav-link" href="cartView.do">장바구니</a>
           </li>

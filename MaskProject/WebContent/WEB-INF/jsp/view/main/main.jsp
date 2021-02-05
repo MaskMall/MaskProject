@@ -82,7 +82,7 @@
   </div>
   <!-- /.container -->
  
- <jsp:include page="footer.jsp"></jsp:include>
+ 
  
    <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

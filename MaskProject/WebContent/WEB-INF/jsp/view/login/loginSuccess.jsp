@@ -13,6 +13,6 @@
 	<h3>${vo.memberAuth } 권한을 갖습니다.</h3>
 	<button type="button" onclick="location.href='main.do'">홈으로</button>
 </div>
-<jsp:include page="../main/footer.jsp"></jsp:include>
+
 </body>
 </html>

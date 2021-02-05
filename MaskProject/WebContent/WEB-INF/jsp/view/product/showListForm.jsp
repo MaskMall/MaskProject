@@ -60,6 +60,6 @@ th, td {
 	</table>
 </div>
   </div>
-<jsp:include page="../main/footer.jsp"></jsp:include>
+
 </body>
 </html>
