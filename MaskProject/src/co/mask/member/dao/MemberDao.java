@@ -14,7 +14,7 @@ public class MemberDao extends DAO {
 
 	// 회원가입
 	public int insert(MemberVo vo) {
-		String sql = "INSERT INTO MEMBER(MEMBERID, MEMBERPASSWORD, MEMBERNAME, MEMBERPHONE, MEMBERADDRESS, MEMBEREMAIL, MEMBERAUTH) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO MEMBER(MEMBERID, MEMBERPASSWORD, MEMBERNAME, MEMBERPHONE, MEMBERADDRESS, MEMBEREMAIL, MEMBERAUTH, MEMBERZIPCODE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		int n = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -25,6 +25,7 @@ public class MemberDao extends DAO {
 			psmt.setString(5, vo.getMemberAddress());
 			psmt.setString(6, vo.getMemberEmail());
 			psmt.setString(7, vo.getMemberAuth());
+			psmt.setString(8, vo.getMemberZipcode());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -90,6 +91,7 @@ public class MemberDao extends DAO {
 				vo.setMemberAddress(rs.getString("MEMBERADDRESS"));
 				vo.setMemberEmail(rs.getString("MEMBEREMAIL"));
 				vo.setMemberAuth(rs.getString("MEMBERAUTH"));
+				vo.setMemberZipcode(rs.getString("MEMBERZIPCODE"));
 				list.add(vo);
 			}
 		} catch (SQLException e) {

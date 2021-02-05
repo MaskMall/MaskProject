@@ -21,6 +21,7 @@ public class Join implements Command {
 		vo.setMemberAddress(request.getParameter("memberAddress"));
 		vo.setMemberEmail(request.getParameter("memberEmail"));
 		vo.setMemberAuth(request.getParameter("memberAuth"));
+		vo.setMemberZipcode(request.getParameter("memberZipcode"));
 		
 		String viewPage = null;
 		int n = dao.insert(vo);

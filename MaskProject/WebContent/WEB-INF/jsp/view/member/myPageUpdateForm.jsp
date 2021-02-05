@@ -6,6 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function formCheck() {
+		if (frm.memberPassword.value != frm.memberPassword1.value) {
+			alert("패스워드가 일치하지 않습니다.");
+			frm.memberPassword1.value = null;
+			frm.memberPassword1.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
 </head>
 <body>
 	<div align="center">
@@ -14,7 +25,7 @@
 		</div>
 		<c:forEach var="vo" items="${list }">
 			<form id="frm" name="frm"
-				action="myPageUpdate.do?memberId=${vo.memberId }" method="post">
+				action="myPageUpdate.do?memberId=${vo.memberId }" onsubmit="return formCheck()" method="post">
 				<table border="1" class="row">
 					<tr>
 						<th>회원 아이디</th>
@@ -22,33 +33,31 @@
 					</tr>
 					<tr>
 						<th>회원 이름</th>
-						<td align="center"><input type="text" id="memberName"
-							name="memberName" value="${vo.memberName }"></td>
+						<td align="center"><input type="text" id="memberName" name="memberName" value="${vo.memberName }"></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td align="center"><input type="text" id="memberPassword"
-							name="memberPassword" value="${vo.memberPassword }"></td>
+						<td align="center"><input type="password" id="memberPassword" name="memberPassword" value="${vo.memberPassword }"></td>
+					</tr>
+					<tr>
+						<th>비밀번호 확인</th>
+						<td><input type="password" id="memberPassword1" name="memberPassword1" required="required"></td>
 					</tr>
 					<tr>
 						<th>전화 번호</th>
-						<td align="center"><input type="text" id="memberPhone"
-							name="memberPhone" value="${vo.memberPhone }"></td>
+						<td align="center"><input type="text" id="memberPhone" name="memberPhone" value="${vo.memberPhone }"></td>
 					</tr>
 					<tr>
 						<th>주소</th>
-						<td align="center"><input type="text" id="memberAddress"
-							name="memberAddress" value="${vo.memberAddress }"></td>
+						<td align="center"><input type="text" id="memberAddress" name="memberAddress" value="${vo.memberAddress }"></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
-						<td align="center"><input type="text" id="memberEmail"
-							name="memberEmail" value="${vo.memberEmail }"></td>
+						<td align="center"><input type="text" id="memberEmail" name="memberEmail" value="${vo.memberEmail }"></td>
 					</tr>
 					<tr>
 						<th>권한</th>
-						<td align="center"><input type="text" id="memberAuth"
-							name="memberAuth" value="${vo.memberAuth }"></td>
+						<td align="center">${vo.memberAuth }</td>
 					</tr>
 				</table>
 				<br />

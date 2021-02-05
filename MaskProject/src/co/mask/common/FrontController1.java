@@ -63,6 +63,7 @@ public class FrontController1 extends HttpServlet {
 		map.put("/myPageUpdateForm.do", new MyPageUpdateForm());//멤버의 내정보 수정 폼 호출
 		map.put("/myPageUpdate.do", new MyPageUpdate());//멤버의 내정보 수정
 		map.put("/myPageDelete.do", new MyPageDelete());//멤버의 회원탈퇴
+		//우편번호 검색
 		
 	
 	}

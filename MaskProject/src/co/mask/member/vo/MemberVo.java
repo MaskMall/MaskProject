@@ -8,6 +8,7 @@ public class MemberVo {
 	private String memberAddress;
 	private String memberEmail;
 	private String memberAuth;
+	private String memberZipcode;
 
 	public String getMemberId() {
 		return memberId;
@@ -64,4 +65,14 @@ public class MemberVo {
 	public void setMemberAuth(String memberAuth) {
 		this.memberAuth = memberAuth;
 	}
+
+	public String getMemberZipcode() {
+		return memberZipcode;
+	}
+
+	public void setMemberZipcode(String memberZipcode) {
+		this.memberZipcode = memberZipcode;
+	}
+	
+	
 }
