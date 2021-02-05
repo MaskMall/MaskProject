@@ -139,7 +139,7 @@ public class BoardDao extends DAO {
 		return result;
 	}
 
-	public void select(BoardVo vo) {
+	public BoardVo select(BoardVo vo) {
 		String sql1 = "SELECT * FROM BOARD WHERE BOARDNUMBER=?";
 		try {
 			psmt = conn.prepareStatement(sql1);
@@ -158,7 +158,8 @@ public class BoardDao extends DAO {
 		}finally {
 			close();
 		}
-	
+		
+		return vo;
 	}
 
 }
