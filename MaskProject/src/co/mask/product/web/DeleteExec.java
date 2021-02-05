@@ -16,6 +16,7 @@ public class DeleteExec implements Command {
 		// DeleteExec.do 메소드 처리
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
+
 		
 		//MemberVo mVo= new MemberVo();
 		
@@ -31,6 +32,7 @@ public class DeleteExec implements Command {
 		
 		
 		return "showProductSeller.do";
+
 	}
 
 }

@@ -55,6 +55,9 @@ th {
 </style>
 </head>
 <body>
+
+<jsp:include page="../main/menu.jsp"></jsp:include>
+ <div class="container">
   <div align="center">
   	<div><h2>상품 목록</h2></div>
 	<table border="1" id="t01">
@@ -79,9 +82,11 @@ th {
 	</table>
 	<br/>
 </div>
+
 			<div align="center">
 		  	  <button type="button" onclick="location.href = 'main.do'">홈으로</button>
 		  	</div> 	
+
 </body>
 
 </html>

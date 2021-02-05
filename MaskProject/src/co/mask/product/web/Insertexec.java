@@ -14,15 +14,15 @@ public class Insertexec implements Command {
 		// Insertexec.do 처리 메소드
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
-		
+
 		vo.setProductName(request.getParameter("productName"));
 		vo.setProductQunt(Integer.parseInt(request.getParameter("productQunt")));
 		vo.setProductPrice(Integer.parseInt(request.getParameter("productPrice")));
 		vo.setProductSeller(request.getParameter("ProductSeller"));
-		
-		int n=dao.insert(vo);
+
+		int n = dao.insert(vo);
 		request.setAttribute("vo", vo);
-		
+
 		return "showProduct.do";
 	}
 

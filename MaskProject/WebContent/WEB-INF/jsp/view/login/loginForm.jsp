@@ -5,34 +5,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<jsp:include page="../main/menu.jsp"></jsp:include>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="main-container">
+		<div class="main-wrap">
 	<div align="center">
-		<div>
-			<h1>로 그 인</h1>
-		</div>
+	<header>
+	<div class="logo-wrap">
+				<img src="#">
+			</div>
+		</header>
+
 		<div>
 			<form id="frm" name="frm" action="login.do" method="post">
-				<div>
-					<table border="1">
-						<tr>
-							<th width="100">아 이 디</th>
-							<td width="100"><input type="text" id="memberId" name="memberId"
-								size="30"></td>
-						</tr>
-						<tr>
-							<th width="100">비밀번호</th>
-							<td width="100"><input type="password" id="memberPassword"
-								name="memberPassword" size="30"></td>
-						</tr>
-					</table>
+				<section class="login-input-section-wrap">
+
+							<div class="login-input-wrap">	
+							<input type="text" id="memberId" name="memberId"
+								size="30">
+							</div>	
+
+						<div class="login-input-wrap password-wrap">
+							<input type="password" id="memberPassword" name="memberPassword" size="30"></td>
+						</div>
+						<div class="login-button-wrap">
+							<button type="submit" onclick="location.href='joinForm.do'">sign in</button>
+							
+						</div>
+						<div class="login-button-wrap">
+							<button type="button" onclick="location.href='joinForm.do'">sign up</button>
+						</div>
+						<div class="login-stay-sign-in">
+							<i class="far fa-check-circle"></i>
+							<span>Stay Signed in</span>
+							</div>
+						</section>
+				
 				</div>
-				<br /> <input type="submit" value="로그인">&nbsp;&nbsp;&nbsp;
-				<!-- <input type="reset" value="취소">&nbsp;&nbsp;&nbsp; -->
-				<button type="button" onclick="location.href='joinForm.do'">회원가입</button>
+				<br /> &nbsp;&nbsp;&nbsp;
 			</form>
 		</div>
 	</div>
-</body>
+
 </body>
 </html>

@@ -3,6 +3,7 @@ package co.mask.member.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import co.mask.common.DAO;
 import co.mask.member.vo.MemberVo;
@@ -70,6 +71,70 @@ public class MemberDao extends DAO {
 			close();
 		}
 		return vo;
+	}
+
+	// 회원의 자기정보 조회
+	public ArrayList<MemberVo> select(MemberVo vo) {
+		String sql = "SELECT * FROM MEMBER WHERE MEMBERID = ?";
+		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberId());
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new MemberVo();
+				vo.setMemberId(rs.getString("MEMBERID"));
+				vo.setMemberPassword(rs.getString("MEMBERPASSWORD"));
+				vo.setMemberName(rs.getString("MEMBERNAME"));
+				vo.setMemberPhone(rs.getString("MEMBERPHONE"));
+				vo.setMemberAddress(rs.getString("MEMBERADDRESS"));
+				vo.setMemberEmail(rs.getString("MEMBEREMAIL"));
+				vo.setMemberAuth(rs.getString("MEMBERAUTH"));
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
+
+	// 회원의 회원수정
+	public int update(MemberVo vo) {
+		int n = 0;
+		String sql = "UPDATE MEMBER SET MEMBERNAME=?, MEMBERPHONE=?, MEMBERADDRESS=?, MEMBEREMAIL=?, MEMBERPASSWORD=?  WHERE MEMBERID=?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberName());
+			psmt.setString(2, vo.getMemberPhone());
+			psmt.setString(3, vo.getMemberAddress());
+			psmt.setString(4, vo.getMemberEmail());
+			psmt.setString(5, vo.getMemberPassword());
+			psmt.setString(6, vo.getMemberId());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
+	}
+
+	// 회원의 회원탈퇴
+	public int delete(MemberVo vo) {
+		String sql = "DELETE FROM MEMBER WHERE MEMBERID =?";
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberId());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	public void close() { // close 메소드
