@@ -14,8 +14,11 @@ public class BootPay implements Command {
 		// 부트페이 결제 시스템
 		CartDao dao = new CartDao();
 		CartVo vo = new CartVo();
-		vo.setCartNumber(Integer.parseInt(request.getParameter("cartNumber")));
+		System.out.println(Integer.parseInt(request.getParameter("cartProduct")));
+		System.out.println(request.getParameter("cartUser"));
+		vo.setCartProduct(Integer.parseInt(request.getParameter("cartProduct")));
 		vo.setCartUser(request.getParameter("cartUser"));
+		
 		
 		dao.select(vo);
 		request.setAttribute("vo", vo);
