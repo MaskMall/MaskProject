@@ -21,7 +21,7 @@ public class CartDao extends DAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new CartVo();
-				vo.setCartNum(rs.getInt("cartnumber"));
+				vo.setCartNumber(rs.getInt("cartnumber"));
 				vo.setCartUser(rs.getString("cartuser"));
 				vo.setCartProduct(rs.getInt("cartproduct"));
 				vo.setCartSelect(rs.getInt("cartselect"));
@@ -43,7 +43,7 @@ public class CartDao extends DAO {
 			psmt.setInt(2, vo.getCartProduct());
 			rs = psmt.executeQuery();
 			if (rs.next()) {
-				vo.setCartNum(rs.getInt("cartnumber"));
+				vo.setCartNumber(rs.getInt("cartnumber"));
 				vo.setCartUser(rs.getString("cartuser"));
 				vo.setCartProduct(rs.getInt("cartproduct"));
 				vo.setCartSelect(rs.getInt("cartselect"));
@@ -59,6 +59,21 @@ public class CartDao extends DAO {
 			close();
 		}
 		return vo;
+	}
+	
+	public int delete(CartVo vo) { //장바구니 삭제
+		int n = 0;
+		String sql = "DELETE FROM CART WHERE CARTNUMBER = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getCartNumber());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return n;
 	}
 
 	public void close() { // close 메소드

@@ -18,7 +18,7 @@
 		frm.submit();
 	}
 	function DeleteProduct(str) {
-		frm.cartProduct.value = str;
+		frm.cartNumber.value = str;
 		frm.action = "cartDelete.do";
 		frm.submit();
 	}
@@ -40,12 +40,12 @@
 					</tr>
 					<c:forEach var="vo" items="${list }">
 						<tr>
-							<td><input type="text" readonly="readonly" id="cartNum" name="cartNum" value="${vo.cartNumber }"></td>
+							<td><input type="text" readonly="readonly" id="cartNumber" name="cartNumber" value="${vo.cartNumber }"></td>
 							<td><input type="text" readonly="readonly" id="cartUser" name="cartUser" value="${vo.cartUser }"></td>
 							<td><input type="text" readonly="readonly" id="cartProduct" name="cartProduct" value="${vo.cartProduct }"></td>
 							<td><input type="text" readonly="readonly" id="cartSelect" name="cartSelect" value="${vo.cartSelect}"></td>
 							<td><button type="button" onclick="buyProduct(${vo.cartProduct})"></button></td>
-							<td><button type="button" onclick="DeleteProduct(${vo.cartProduct})"></button></td>
+							<td><button type="button" onclick="DeleteProduct(${vo.cartNumber})"></button></td>
 						</tr>
 					</c:forEach>
 				</table>

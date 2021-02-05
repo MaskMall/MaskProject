@@ -19,6 +19,30 @@ public class CartVo {
 		this.cartNumber = cartNumber;
 	}
 
+	public String getCartUser() {
+		return cartUser;
+	}
+
+	public void setCartUser(String cartUser) {
+		this.cartUser = cartUser;
+	}
+
+	public int getCartProduct() {
+		return cartProduct;
+	}
+
+	public void setCartProduct(int cartProduct) {
+		this.cartProduct = cartProduct;
+	}
+
+	public int getCartSelect() {
+		return cartSelect;
+	}
+
+	public void setCartSelect(int cartSelect) {
+		this.cartSelect = cartSelect;
+	}
+
 	public int getProductNum() {
 		return productNum;
 	}
@@ -59,35 +83,4 @@ public class CartVo {
 		ProductSeller = productSeller;
 	}
 
-	public int getCartNum() {
-		return cartNumber;
-	}
-
-	public void setCartNum(int cartNum) {
-		this.cartNumber = cartNum;
-	}
-
-	public String getCartUser() {
-		return cartUser;
-	}
-
-	public void setCartUser(String cartUser) {
-		this.cartUser = cartUser;
-	}
-
-	public int getCartProduct() {
-		return cartProduct;
-	}
-
-	public void setCartProduct(int cartProduct) {
-		this.cartProduct = cartProduct;
-	}
-
-	public int getCartSelect() {
-		return cartSelect;
-	}
-
-	public void setCartSelect(int cartSelect) {
-		this.cartSelect = cartSelect;
-	}
 }

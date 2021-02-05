@@ -28,6 +28,10 @@ import co.mask.login.web.LoginForm;
 
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
+import co.mask.member.web.MyPageDelete;
+import co.mask.member.web.MyPageForm;
+import co.mask.member.web.MyPageUpdate;
+import co.mask.member.web.MyPageUpdateForm;
 
 @WebServlet("/FrontController1")
 public class FrontController1 extends HttpServlet {
@@ -53,12 +57,14 @@ public class FrontController1 extends HttpServlet {
 		map.put("/userDelete.do", new UserDelete()); //관리자의 회원 삭제 
 		map.put("/adminSellerForm.do", new AdminSellerForm()); //관리자의 거래처목록 폼 호출
 		map.put("/sellerUpForm.do", new SellerUpForm()); //관리자의 거래처 수정 폼 호출
-		map.put("/sellerUpdate.do", new SellerUpdate()); //관리자의 거래처 수정-----끝
+		map.put("/sellerUpdate.do", new SellerUpdate()); //관리자의 거래처 수정
 		map.put("/sellerDelete.do", new SellerDelete()); //관리자의 거래처 삭제
+		map.put("/myPageForm.do", new MyPageForm()); //멤버(회원,거래처)의 내정보 조회
+		map.put("/myPageUpdateForm.do", new MyPageUpdateForm());//멤버의 내정보 수정 폼 호출
+		map.put("/myPageUpdate.do", new MyPageUpdate());//멤버의 내정보 수정
+		map.put("/myPageDelete.do", new MyPageDelete());//멤버의 회원탈퇴
 		
-		
-		
-//		map.put("/myPage", new MyPage());	//유저의 마이페이지 폼 호출
+	
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
