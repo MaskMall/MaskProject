@@ -27,6 +27,7 @@ import co.mask.product.web.ShowProduct;
 import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
+import co.mask.sell.web.SellInsert;
 import co.mask.sell.web.SellView;
 
 
@@ -52,10 +53,11 @@ public class FrontController2 extends HttpServlet {
 		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
 		//Cart
 		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
-		map.put("/bootPay.do", new BootPay());
-		map.put("/cartDelete.do", new CartDelete());
+		map.put("/bootPay.do", new BootPay()); // bootPay 결제
+		map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
 		//Sell
-		map.put("/sellView.do", new SellView());
+		map.put("/sellView.do", new SellView()); // 판매 내역 리스트
+		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
 		//Product
 		map.put("/showProduct.do", new ShowProduct()); //상품목록 조회
 		map.put("/toInsertProduct.do", new ToInsertProduct()); //상품등록 화면 가기
