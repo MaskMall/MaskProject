@@ -20,6 +20,12 @@ import co.mask.login.web.Login;
 import co.mask.login.web.LoginForm;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
+import co.mask.product.web.DeleteExec;
+import co.mask.product.web.Insertexec;
+import co.mask.product.web.ShowProduct;
+import co.mask.product.web.ToInsertProduct;
+import co.mask.product.web.ToUpdateProduct;
+import co.mask.product.web.UpdateExec;
 
 
 @WebServlet("/FrontController5")
@@ -43,6 +49,13 @@ public class FrontController5 extends HttpServlet {
 		//Cart
 		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
 		map.put("/bootPay.do", new BootPay());
+		
+		map.put("/showProduct.do", new ShowProduct()); //상품목록 조회
+		map.put("/toInsertProduct.do", new ToInsertProduct()); //상품등록 화면 가기
+		map.put("/insertExec.do", new Insertexec()); //상품등록
+		map.put("/toUpdateProduct.do", new ToUpdateProduct()); //상품수정 화면 가기
+		map.put("/updateExec.do", new UpdateExec()); //상품수정
+		map.put("/deleteExec.do", new DeleteExec()); //상품삭제
 	}
 
 

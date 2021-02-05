@@ -14,16 +14,16 @@ public class UpdateExec implements Command {
 		// UpdateExec.do 처리 메소드
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
-		
+
 		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
 		vo.setProductName(request.getParameter("productName"));
 		vo.setProductQunt(Integer.parseInt(request.getParameter("productQunt")));
 		vo.setProductPrice(Integer.parseInt(request.getParameter("productPrice")));
 		vo.setProductSeller(request.getParameter("ProductSeller"));
-		
-		int n=dao.update(vo);
+
+		int n = dao.update(vo);
 		request.setAttribute("vo", vo);
-		
+
 		return "showProduct.do";
 	}
 
