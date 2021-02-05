@@ -3,9 +3,10 @@ package co.mask.sell.vo;
 import java.sql.Date;
 
 public class SellVo {
-	private int sellProductNum;
-	private int sellNum;
+	private int sellProductNumber;
+	private int sellNumber;
 	private Date sellDate;
+	private String sellUser;
 	private String memberId;
 	private int productNum;
 	private String productName;
@@ -13,7 +14,13 @@ public class SellVo {
 	private int productPrice;
 	private String ProductSeller;
 
+	public String getSellUser() {
+		return sellUser;
+	}
 
+	public void setSellUser(String sellUser) {
+		this.sellUser = sellUser;
+	}
 
 	public String getMemberId() {
 		return memberId;
@@ -63,20 +70,20 @@ public class SellVo {
 		ProductSeller = productSeller;
 	}
 
-	public int getSellProductNum() {
-		return sellProductNum;
+	public int getSellProductNumber() {
+		return sellProductNumber;
 	}
 
-	public void setSellProductNum(int sellProductNum) {
-		this.sellProductNum = sellProductNum;
+	public void setSellProductNumber(int sellProductNumber) {
+		this.sellProductNumber = sellProductNumber;
 	}
 
-	public int getSellNum() {
-		return sellNum;
+	public int getSellNumber() {
+		return sellNumber;
 	}
 
-	public void setSellNum(int sellNum) {
-		this.sellNum = sellNum;
+	public void setSellNumber(int sellNumber) {
+		this.sellNumber = sellNumber;
 	}
 
 	public Date getSellDate() {

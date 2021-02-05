@@ -22,7 +22,7 @@ public class CartView implements Command {
 
 		vo.setCartUser((String) session.getAttribute("memberId"));
 		list = dao.selectList(vo);
-		request.setAttribute("list", list);
+		request.setAttribute("cartList", list);
 
 		return "view/cart/cartView";
 	}

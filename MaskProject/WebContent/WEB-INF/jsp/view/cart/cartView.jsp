@@ -29,6 +29,8 @@
 		<h1>cartView 페이지</h1>
 		<div>
 			<form action="" id="frm" name="frm" method="post">
+			<input type="hidden" name="cartProduct" id="cartProduct">
+			<input type="hidden" name="cartNumber" id="cartNumber">
 				<table border="1">
 					<tr>
 						<th>장바구니 번호</th>
@@ -38,14 +40,17 @@
 						<th>구 매</th>
 						<th>삭 제</th>
 					</tr>
-					<c:forEach var="vo" items="${list }">
+					<c:forEach var="vo" items="${cartList }">
 						<tr>
-							<td><input type="text" readonly="readonly" id="cartNumber" name="cartNumber" value="${vo.cartNumber }"></td>
-							<td><input type="text" readonly="readonly" id="cartUser" name="cartUser" value="${vo.cartUser }"></td>
-							<td><input type="text" readonly="readonly" id="cartProduct" name="cartProduct" value="${vo.cartProduct }"></td>
-							<td><input type="text" readonly="readonly" id="cartSelect" name="cartSelect" value="${vo.cartSelect}"></td>
-							<td><button type="button" onclick="buyProduct(${vo.cartProduct})"></button></td>
-							<td><button type="button" onclick="DeleteProduct(${vo.cartNumber})"></button></td>
+							<td>${vo.cartNumber }</td>
+							<td>${vo.cartUser }</td>
+							<td>${vo.cartProduct }</td>
+							<td>${vo.cartSelect }</td>
+							<td><button type="button" onclick="buyProduct(${vo.cartProduct})">구 매</button></td>
+							<td>
+								<button type="button" onclick="DeleteProduct(${vo.cartNumber})">삭 제</button>
+								<input type="hidden" name="cartUser" id="cartUser" value=${vo.cartUser }>
+							</td>
 						</tr>
 					</c:forEach>
 				</table>

@@ -91,6 +91,9 @@ body {
           <li class="nav-item active">
             <a class="nav-link" href="boardListForm.do">문의페이지</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="sellView.do">구매내역</a>
+          </li>
 
         </ul>
       </div>

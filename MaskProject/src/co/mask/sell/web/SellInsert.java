@@ -2,6 +2,7 @@ package co.mask.sell.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.mask.common.Command;
 import co.mask.sell.dao.SellDao;
@@ -14,8 +15,11 @@ public class SellInsert implements Command {
 		// 판매 완료시 Sell 테이블 입력
 		SellDao dao = new SellDao();
 		SellVo vo = new SellVo();
-		vo.setSellNum(Integer.parseInt(request.getParameter("sellNum")));
-		vo.setSellProductNum(Integer.parseInt(request.getParameter("productNum")));
+		HttpSession session = request.getSession();
+		
+		vo.setSellNumber(Integer.parseInt(request.getParameter("sellNumber")));
+		vo.setSellProductNumber(Integer.parseInt(request.getParameter("productNumber")));
+		vo.setMemberId((String) session.getAttribute("memberId"));
 		
 		dao.insert(vo);
 		
