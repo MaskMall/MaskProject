@@ -12,11 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Catch;
 
 public class BoardController extends HttpServlet {
 
-	private static final long serialVersion = 1L;
+	private static final long serialVersionUID= 1L;
 	private HashMap<String, Action> commandMap;
 
 	public void init(ServletConfig config) throws ServletException {

@@ -30,7 +30,6 @@
  	</script>
 </head>
 <body>
-<div align="center"><h2>문의게시판</h2></div>
 	<div id="wrap">
 		<br>
 		<div id="topForm">
@@ -72,7 +71,7 @@
 				</select>
 				<input type="text" size="20" name="condition" />&nbsp;
 				<input type="submit" value="검색"/>&nbsp;&nbsp;
-				<button type="button" onclick="location.href='boardWirteForm.do'">글쓰기</button>
+				<button type="button" onclick="loaction.href='boardWirteForm.do'">글쓰기</button>
 				
 			</form>
 		</div>

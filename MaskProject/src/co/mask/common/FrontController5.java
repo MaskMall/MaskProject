@@ -1,6 +1,6 @@
 package co.mask.common;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -32,7 +32,6 @@ import co.mask.login.web.Login;
 import co.mask.login.web.LoginForm;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
-import co.mask.main.test.Test;
 import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
@@ -40,7 +39,7 @@ import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
 
-
+ 
 @WebServlet("/FrontController5")
 public class FrontController5 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -90,7 +89,7 @@ public class FrontController5 extends HttpServlet {
 		
 		
 		//FrontController5
-		map.put("/test.do", new Test()); //test중입니다.
+	//	map.put("/test.do", new Test()); //test중입니다.
 	}
 
 
