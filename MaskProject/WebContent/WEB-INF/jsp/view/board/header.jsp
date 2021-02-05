@@ -66,7 +66,7 @@
 				<button id="joinBtn" class="btn btn-primary" onclick="changeView(4)">내정보</button>
 			</c:if>
 			
-			<button id="joinBtn class="btn btn-info onclick="changeView(6)">게시판</button>
+			<button id="joinBtn" class="btn btn-info" onclick="changeView(6)">게시판</button>
 			
 			<!-- 관리자 -->
 			<c:if test="${sessionScope.sessionID != null && sessionScope.sessionID == 'admin' }">

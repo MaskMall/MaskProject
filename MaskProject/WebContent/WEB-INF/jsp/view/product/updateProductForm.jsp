@@ -6,12 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+table {
+  width:50%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+
+</style>
 </head>
 <body>
 <div align="center">
-	<div><h1>상품 등록</h1></div>
-		<form id="frm" name="frm" action="insertExec.do" method="post">
-			<table border="1">
+	<div><h1>상품 수정</h1></div>
+		<form id="frm" name="frm" action="updateExec.do" method="post">
+			<table border="1" id="t01">
 				<tr >
 					<th width="150">상품 번호</th>
 				    <th width="150">상품 이름</th> 
@@ -19,19 +47,21 @@
 				    <th width="150">상품 판매가격</th>
 				    <th width="150">판매자</th>
 				</tr>
-				<c:forEach var="vo" items="${product }">
+				<c:forEach var="vo" items="${list }">
 				<tr>
-					<td width="150"><input type="number" id="productNum" name="productNum" readonly="readonly"></td>
-					<td width="150"><input type="text" id="productName" name="productName" value="${vo.productName }"></td>
-					<td width="150"><input type="number" id="productQunt" name="productQunt" value="${vo.productQunt }" ></td>
-					<td width="150"><input type="number" id="productPrice" name="productPrice" value="${vo.productPrice }" ></td>
-					<td width="150"><input type="text" id="ProductSeller" name="ProductSeller" readonly="readonly"></td>
+					<td width="150"><input type="text" name="productNum" value="${vo.productNum}" readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productName" value="${vo.productName}" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productQunt" value="${vo.productQunt}" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productPrice" value="${vo.productPrice}" size="20" style="width:100%; border:0.5;" ></td>
+					<td width="150"><input type="text" name="ProductSeller" value="${vo.productSeller}"readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
 				</tr>
 				</c:forEach>	
 			</table><br/>
 			<div>
 				<button type="submit" >수정</button>&nbsp;&nbsp;
-				<input type="reset" id="cancle" name="cancle" value="취소">
+				<input type="reset" id="cancle" name="cancle" value="취소">&nbsp;&nbsp;
+				<button type="button" onclick="location.href = 'showProduct.do'">상품목록 가기</button>
+				
 			</div>
 		</form>	
 

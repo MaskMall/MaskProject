@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.mask.board.web.BoardListForm;
+import co.mask.board.web.BoardView;
 import co.mask.board.web.BoardWirte;
 import co.mask.board.web.Hedaer;
 import co.mask.main.MainPage;
@@ -33,8 +34,9 @@ public class FrontController3 extends HttpServlet {
 		map.put("/main.do", new MainPage());
 		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
 		map.put("/boardListForm.do", new BoardListForm());
-		map.put("/boardWirteForm.do", new BoardWirte());//글쓰기파일첨부 만듦<-확인해야 합니다.
-		map.put("/header.do", new Hedaer()); //
+		map.put("/boardWirteForm.do", new BoardWirte());
+		map.put("/header.do", new Hedaer());
+		map.put("/boardView.do", new BoardView());
 	
 	}
 

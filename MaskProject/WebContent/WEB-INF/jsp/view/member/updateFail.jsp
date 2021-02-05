@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="menu.do"></jsp:forward>
+<h1>회원수정에 실패하였습니다.</h1>
+<button type="button" onclick="location.href='myPageUpdateForm.do'">마이페이지</button>
 </body>
-</html> 
+</html>

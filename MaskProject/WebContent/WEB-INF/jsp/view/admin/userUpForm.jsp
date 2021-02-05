@@ -9,10 +9,10 @@
 <body>
 	<div align="center">
 		<div>
-			<h1>회원 수정</h1>
+			<h1>${vo.memberId } 회원 수정</h1>
 		</div>
 		<form id="frm" name="frm" action="userUpdate.do?memberId=${vo.memberId }" method="post">
-			<table border="1">
+			<table border="1" class="row">
 				<tr style="background-color: silver">
 					<th width="100">회원 아이디</th>
 					<th width="100">회원명</th>
@@ -35,7 +35,7 @@
 			&nbsp;&nbsp;&nbsp;
 			<button type="reset">취소</button>
 			&nbsp;&nbsp;&nbsp;
-			<button type="button" onclick="location.href='adminUserFrom.do'">목록</button>
+			<button type="button" onclick="location.href='adminUserForm.do'">목록</button>
 		</form>
 	</div>
 </body>

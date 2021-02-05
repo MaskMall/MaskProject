@@ -6,7 +6,12 @@
 	<display-name>MaskProject</display-name>
 	<servlet>
 		<servlet-name>FrontController</servlet-name>
+<<<<<<< HEAD
 		<servlet-class>co.mask.common.FrontController2</servlet-class>
+=======
+		<servlet-class>co.mask.common.FrontController3</servlet-class>
+
+>>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>FrontController</servlet-name>

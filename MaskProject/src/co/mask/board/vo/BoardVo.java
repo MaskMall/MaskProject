@@ -3,7 +3,7 @@ package co.mask.board.vo;
 import java.sql.Date;
 
 public class BoardVo {
-	private int boardNum;
+	private int boardNumber;
 	private String boardTitle;
 	private String boardWriter;
 	private String boardContent;
@@ -11,11 +11,13 @@ public class BoardVo {
 	private Date boardDate;
 	private int boardLock;
 	private String boardValue;
-	public int getBoardNum() {
-		return boardNum;
+	private int boardHit;
+	
+	public int getBoardNumber() {
+		return boardNumber;
 	}
-	public void setBoardNum(int boardNum) {
-		this.boardNum = boardNum;
+	public void setBoardNumber(int boardNumber) {
+		this.boardNumber = boardNumber;
 	}
 	public String getBoardTitle() {
 		return boardTitle;
@@ -59,7 +61,15 @@ public class BoardVo {
 	public void setBoardValue(String boardValue) {
 		this.boardValue = boardValue;
 	}
-
+	public int getBoardHit() {
+		return boardHit;
+	}
+	public void setBoardHit(int boardHit) {
+		this.boardHit = boardHit;
+	}
+	
+	
+	
 	
 	
 }

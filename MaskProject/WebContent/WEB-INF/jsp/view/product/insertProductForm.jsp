@@ -5,30 +5,57 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+table {
+  width:50%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+
+</style>
 </head>
 <body>
-	<div align="center">
+	<div align="center" class="inputt">
 	<div><h1>상품 등록</h1></div>
 		<form id="frm" name="frm" action="insertExec.do" method="post">
-			<table border="1">
+			<table border="1" class="t01">
 				<tr >
-					<th width="150">상품 번호</th>
-				    <th width="150">상품 이름</th> 
-				    <th width="150">상품 수량</th>
-				    <th width="150">상품 판매가격</th>
-				    <th width="150">판매자</th>
+					<th width="80">상품 이름</th> 
+				    <th width="45">상품 수량</th>
+				    <th width="50">상품 판매가격</th>
+				    <th width="80">판매자</th>
 				</tr>
 				<tr>
-					<td width="150"><input type="number" id="productNum" name="productNum"></td>
-					<td width="150"><input type="text" id="productName" name="productName"></td>
-					<td width="150"><input type="number" id="productQunt" name="productQunt" min="1" max="500" ></td>
-					<td width="150"><input type="number" id="productPrice" name="productPrice" ></td>
-					<td width="150"><input type="text" id="ProductSeller" name="ProductSeller"></td>
+					<td width="80"><input type="text" id="productName" name="productName" size="20" style="width:100%; border:0.5;" ></td>
+					<td width="45"><input type="number" id="productQunt" name="productQunt" size="20" style="width:100%; border:0.5;" ></td>
+					<td width="50"><input type="number" id="productPrice" name="productPrice" size="20" style="width:100%; border:0.5;"></td>
+					<td width="80"><input type="text" id="ProductSeller" name="ProductSeller" size="20" style="width:100%; border:0.5;"></td>
 				</tr>	
 			</table><br/>
 			<div>
 				<button type="submit" >상품 등록</button>&nbsp;&nbsp;
-				<input type="reset" id="cancle" name="cancle" value="취소">
+				<input type="reset" id="cancle" name="cancle" value="취소">&nbsp;&nbsp;
+				<button type="button" onclick="location.href = 'showProduct.do'">상품목록 가기</button>
 			</div>
 		</form>	
 

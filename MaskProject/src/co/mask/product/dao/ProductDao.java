@@ -18,14 +18,14 @@ public class ProductDao extends DAO{
 		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		ProductVo vo;
 		
-		String sql = "SELECT* FROM PRODUCT";
+		String sql = "SELECT* FROM PRODUCT ORDER BY PRODUCTNUM";
 		try {
 			psmt=conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo=new ProductVo();
 				vo.setProductNum(rs.getInt("productNum"));
-				vo.setProductName(rs.getString("productNumber"));
+				vo.setProductName(rs.getString("productName"));
 				vo.setProductQunt(rs.getInt("productQunt"));
 				vo.setProductPrice(rs.getInt("productPrice"));
 				vo.setProductSeller(rs.getString("productSeller"));
@@ -40,8 +40,8 @@ public class ProductDao extends DAO{
 	}
 	
 	//상품 한건 조회
-	public ProductVo select(ProductVo vo) {
-		
+	public ArrayList<ProductVo> select(ProductVo vo) {
+		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		String sql = "SELECT* FROM PRODUCT WHERE PRODUCTNUM=?";
 		try {
 			psmt=conn.prepareStatement(sql);
@@ -50,18 +50,18 @@ public class ProductDao extends DAO{
 			while (rs.next()) {
 				vo=new ProductVo();
 				vo.setProductNum(rs.getInt("productNum"));
-				vo.setProductName(rs.getString("productNumber"));
+				vo.setProductName(rs.getString("productName"));
 				vo.setProductQunt(rs.getInt("productQunt"));
 				vo.setProductPrice(rs.getInt("productPrice"));
 				vo.setProductSeller(rs.getString("productSeller"));
-				
+				list.add(vo);
 			}
 		}catch(SQLException e) {
 			
 		}finally {
 			close();
 		}
-		return vo;
+		return list;
 	}
 		
 	
@@ -89,7 +89,7 @@ public class ProductDao extends DAO{
 	//판매자 상품 수정
 	public int update(ProductVo vo) {
 		int n=0;
-		String sql="UPDATE PRODUCT SET PRODUCTNAME=?, PRODUCTQUNT=?, PRODUCTPRICE=? WHERE PRODUCTNUMBER=?";
+		String sql="UPDATE PRODUCT SET PRODUCTNAME=?, PRODUCTQUNT=?, PRODUCTPRICE=? WHERE PRODUCTNUM=?";
 		
 		try {
 			psmt=conn.prepareStatement(sql);
@@ -111,11 +111,13 @@ public class ProductDao extends DAO{
 	//판매자 상품 삭제
 	public int delete(ProductVo vo) {
 		int n=0;
-		String sql="DELETE FROM PRODUCT WHERE PRODUCTNUMBER=?";
+		String sql="delete from product where PRODUCTSELLER IN ( select m.memberid from member m where m.memberid=?) and productnum=?";
 		
 		try {
 			psmt=conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getProductNum());
+			psmt.setString(1, vo.getMemberId());
+			psmt.setInt(2, vo.getProductNum());
+			
 			n=psmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -35,7 +35,7 @@ public class BoardWriteAction implements Action {
 			BoardDao dao = BoardDao.getInstance();
 			BoardVo borderData = new BoardVo();
 
-			borderData.setBoardNum(dao.getSeq()); // 시퀀스 가져와 셋팅
+			borderData.setBoardNumber(dao.getSeq()); // 시퀀스 가져와 셋팅
 			borderData.setBoardWriter(multi.getParameter("boardwriter")); // 히든값
 			borderData.setBoardTitle(multi.getParameter("boardtitle"));
 			borderData.setBoardContent(multi.getParameter("boardcontent"));

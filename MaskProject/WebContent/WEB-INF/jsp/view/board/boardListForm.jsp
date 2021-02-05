@@ -30,7 +30,6 @@
  	</script>
 </head>
 <body>
-<div align="center"><h2>문의게시판</h2></div>
 	<div id="wrap">
 		<br>
 		<div id="topForm">
@@ -39,24 +38,28 @@
 			</c:if>
 		</div>
 		<br>
+		<form id="frm" name="frm" method="post">
 		<div id="board">
 			<table id="bList" width="800" border="3">
 				<tr height="30">
-					<td>글번호</td>
-					<td>제목</td>
-					<td>작성자</td>
-					<td>작성일</td>
-					<td>조회수</td>
+					<th>글번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>조회수</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>1</td>
-					<td>1</td>
-					<td>1</td>
-					<td>1</td>
-				</tr>	
+				<c:forEach var="vo" items="${list }">
+				<tr id="${vo.boardNumber }" onclick="location.href='boardView.do'">
+				<td align="center">${vo.boardNumber }</td>
+				<td align="center">${vo.boardTitle }</td>
+				<td align="center">${vo.boardWriter }</td>
+				<td align="center">${vo.boardDate }</td>
+				<td align="center">${vo.boardHit }</td>
+				</tr>
+				</c:forEach>
 			</table>
 		</div>
+		</form>
 		<br>
 		<div id="pageForm">
 			페이지번호
@@ -72,7 +75,7 @@
 				</select>
 				<input type="text" size="20" name="condition" />&nbsp;
 				<input type="submit" value="검색"/>&nbsp;&nbsp;
-				<button type="button" onclick="location.href='boardWirteForm.do'">글쓰기</button>
+				<button type="button" onclick="loaction.href='boardWirteForm.do'">글쓰기</button>
 				
 			</form>
 		</div>

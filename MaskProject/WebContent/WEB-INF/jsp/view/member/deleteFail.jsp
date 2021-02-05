@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="menu.do"></jsp:forward>
+<div align="center">
+	<h3>회원탈퇴 되지않았습니다.</h3>
+	<button type="button" onclick="location.href='myPageForm.do'">마이페이지 돌아가기</button>
+</div>
 </body>
-</html> 
+</html>

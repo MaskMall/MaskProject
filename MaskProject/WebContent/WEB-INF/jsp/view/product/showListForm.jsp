@@ -8,15 +8,19 @@
 <title>Insert title here</title>
 <style>
 table {
-  width:100%;
+  width:70%;
 }
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-th, td {
+td {
   padding: 15px;
   text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
 }
 #t01 tr:nth-child(even) {
   background-color: #eee;
@@ -28,6 +32,26 @@ th, td {
   background-color: black;
   color: white;
 }
+
+.insertBtn {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+
+.updateBtn{
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+
+}
+
 </style>
 </head>
 <body>
@@ -35,31 +59,34 @@ th, td {
 <jsp:include page="../main/menu.jsp"></jsp:include>
  <div class="container">
   <div align="center">
-	<table border="1">
+  	<div><h2>상품 목록</h2></div>
+	<table border="1" id="t01">
 		  <tr>
-		    <th width="150">상품 번호</th>
-		    <th width="150">상품 이름</th> 
-		    <th width="150">상품 수량</th>
-		    <th width="150">상품 판매가격</th>
-		    <th width="150">해당 판매자</th>
+		    <th width="70" >상품 번호</th>
+		    <th width="100">상품 이름</th> 
+		    <th width="70">상품 수량</th>
+		    <th width="70">상품 판매가격</th>
+		    <th width="70">해당 판매자</th>
 		  </tr>
-			  <c:forEach var="vo" items="${Product }">
-				  <tr class="row">
-				    <td>${vo.productNum}</td>
-				    <td>${vo.productName}</td>
-				    <td>${vo.productQunt}</td>
-				    <td>${vo.productPrice}</td>
-				    <td>${vo.ProductSeller}</td>
-				  </tr>
-			  </c:forEach>
-			  <c:if test="${vo.MEMBERAUTH eq 'SELLER'}">
-			  <button type="button" onclick="location.href = 'toInsertProduct.do'">상품 등록</button>&nbsp;&nbsp;
-			  <button type="button" onclick="location.href='toUpdateProduct.do'">상품 수정</button>&nbsp;&nbsp;
-			  <button type="button" onclick="location.href='deleteExec.do'">상품 삭제</button>&nbsp;&nbsp;
-		  	  </c:if>
+			  <c:forEach var="vo" items="${list }">
+			  
+				 <tr class="row">
+				 
+				    <td width="70">${vo.productNum}</td>
+				    <td width="70">${vo.productName}</td>
+				    <td width="70">${vo.productQunt}</td>
+				    <td width="70">${vo.productPrice}</td>
+				    <td width="70">${vo.productSeller}</td>
+		  	  </tr>
+		  </c:forEach>	   
 	</table>
+	<br/>
 </div>
-  </div>
+
+			<div align="center">
+		  	  <button type="button" onclick="location.href = 'main.do'">홈으로</button>
+		  	</div> 	
 
 </body>
+
 </html>
