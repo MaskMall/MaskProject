@@ -90,7 +90,7 @@ public class FrontController5 extends HttpServlet {
 		
 		
 		//FrontController5
-		map.put("/test.do", new Test()); //test중입니다.
+//		map.put("/test.do", new Test()); //test중입니다.
 	}
 
 
