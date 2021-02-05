@@ -21,9 +21,11 @@ public class CartView implements Command {
 		HttpSession session = request.getSession();
 
 		vo.setCartUser((String) session.getAttribute("memberId"));
+		
 		list = dao.selectList(vo);
+		
 		request.setAttribute("cartList", list);
-		System.out.println("cartList");
+		
 
 		return "view/cart/cartView";
 	}

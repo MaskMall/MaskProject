@@ -87,6 +87,7 @@ th {
 				    <td width="70">${vo.productSeller}</td>
 			  
 			  		<c:if test="${MemberVo.memberAuth eq SELLER}">
+			  		
 			  			<td>
 			  			  <div class="insertBtn">
 					  		<form name="frm2" action="toInsertProduct.do" method="post">
@@ -104,23 +105,28 @@ th {
 			  	 		  </div>
 			  	 		</td>
 			  	 			
+			  	 	
+			  	 			
 			  	 		<td><%-- <c:if test="${empty CartVo.cartList}"> --%>
 			  	 		  	<form name="frm" action="deleteExec.do" method="post">
 						  		<input type="hidden" name="productNum" value="${vo.productNum}">
 						  		<button type="button" onclick="PdDelete()" >삭  제</button>
 				  	 		</form>
 			  	 		     <%-- </c:if> --%>
-			  	 		    <c:if test="${!empty CartVo.cartList}"> 
+			  	 		   
 			  	 		    
 			  	 		    <button type="button" onclick="elertDelete()">삭  제</button>
-			  	 		     </c:if> 
+			  	 		 
+			  	 		  
+			     
 			  	  </c:if>
 			  
 		  	  </tr>
-		  	  <c:out value="${empty CartVo.cartList}"></c:out>
+		  	  
 		  </c:forEach>	   
 	</table>
 	<br/>
+	
 </div>
 			<div align="center">
 		  	  <button type="button" onclick="location.href = 'main.do'">홈으로</button>&nbsp;&nbsp;
