@@ -43,7 +43,7 @@
             <a class="nav-link" href="joinForm.do">회원가입</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">내정보</a>
+            <a class="nav-link" href="#">내정보!</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="boardListForm.do">문의페이지</a>

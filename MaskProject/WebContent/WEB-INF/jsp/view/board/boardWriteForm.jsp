@@ -19,7 +19,7 @@
 <body>
 
 	<br>
-	<div align="center"><h1>문의 게시판</h1></div>
+	<div align="center"><h1>문의 게시판!</h1></div>
 	<br>
 
 	<form method="post" action="BoardWriteAction.bo" name="boardForm" enctype="multipart/form-data">
