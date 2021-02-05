@@ -44,41 +44,10 @@
 		}
 	}
 </script>
-
+<jsp:include page="../main/menu.jsp"></jsp:include>
 </head>
 <body>
 
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Our Mask</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">마스크 구매하기
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">구매내역</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">마이페이지</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">고객센터</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="joinForm.do">회원가입</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navigation end -->
   
   
   <!--  -->
@@ -142,19 +111,7 @@
  </div>
   <!-- /.container -->
 	
-<!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">문의처 : YD 053 - 123 -1234 </p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
+<jsp:include page="../main/footer.jsp"></jsp:include>
 </body>
 </html>

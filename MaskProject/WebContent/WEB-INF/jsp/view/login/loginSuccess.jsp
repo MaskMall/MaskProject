@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Insert title here</title>'
+<jsp:include page="../main/menu.jsp"></jsp:include>
 </head>
 <body>
 <div align="center">
@@ -12,5 +13,6 @@
 	<h3>${vo.memberAuth } 권한을 갖습니다.</h3>
 	<button type="button" onclick="location.href='main.do'">홈으로</button>
 </div>
+<jsp:include page="../main/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -20,6 +20,7 @@ import co.mask.login.web.Login;
 import co.mask.login.web.LoginForm;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
+import co.mask.main.test.Test;
 import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
@@ -46,6 +47,7 @@ public class FrontController5 extends HttpServlet {
 		map.put("/loginForm.do", new LoginForm());	//로그인 폼 호출
 		map.put("/login.do", new Login()); 	//로그인
 		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
+		
 		//Cart
 		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
 		map.put("/bootPay.do", new BootPay());
@@ -56,6 +58,9 @@ public class FrontController5 extends HttpServlet {
 		map.put("/toUpdateProduct.do", new ToUpdateProduct()); //상품수정 화면 가기
 		map.put("/updateExec.do", new UpdateExec()); //상품수정
 		map.put("/deleteExec.do", new DeleteExec()); //상품삭제
+		
+		
+		map.put("/test.do", new Test()); //test중입니다.
 	}
 
 

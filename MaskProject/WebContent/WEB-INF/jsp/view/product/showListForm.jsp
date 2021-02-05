@@ -31,6 +31,9 @@ th, td {
 </style>
 </head>
 <body>
+
+<jsp:include page="../main/menu.jsp"></jsp:include>
+ <div class="container">
   <div align="center">
 	<table border="1">
 		  <tr>
@@ -56,5 +59,7 @@ th, td {
 		  	  </c:if>
 	</table>
 </div>
+  </div>
+<jsp:include page="../main/footer.jsp"></jsp:include>
 </body>
 </html>
