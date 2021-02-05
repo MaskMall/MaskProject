@@ -8,8 +8,8 @@
 </head>
 <body>
 <div align="center">
-	<h3>${param.memberId }님이 회원가입에 실패하셨습니다.</h3>
-	<button type="button" onclick="location.href='joinForm.do'">회원가입 창</button>
+<button type="button" onclick="location.href='adminUserForm.do'">회원 관리</button>
+<button type="button" onclick="location.href='adminSellerForm.do'">거래처 관리</button>
 </div>
 </body>
 </html>
