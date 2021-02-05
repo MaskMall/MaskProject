@@ -38,7 +38,7 @@
 						<th>구 매</th>
 						<th>삭 제</th>
 					</tr>
-					<c:forEach var="vo" items="${list }">
+					<c:forEach var="vo" items="${cartList }">
 						<tr>
 							<td><input type="text" readonly="readonly" id="cartNumber" name="cartNumber" value="${vo.cartNumber }"></td>
 							<td><input type="text" readonly="readonly" id="cartUser" name="cartUser" value="${vo.cartUser }"></td>

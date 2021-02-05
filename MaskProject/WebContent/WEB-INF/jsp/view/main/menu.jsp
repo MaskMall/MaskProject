@@ -74,6 +74,11 @@ body {
             <a class="nav-link" href="joinForm.do">회원가입</a>
           </li>
 
+          
+          
+    
+
+
           </c:if>
           <c:if test="${memberId != null and memberAuth != null}">
           <li class="nav-item active">
@@ -91,6 +96,13 @@ body {
           <li class="nav-item active">
             <a class="nav-link" href="boardListForm.do">문의페이지</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="showProduct.do">상품조회</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="showProductSeller.do">상품관리</a>
+          </li>
+
 
         </ul>
       </div>

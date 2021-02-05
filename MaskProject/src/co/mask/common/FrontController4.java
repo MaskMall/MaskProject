@@ -27,6 +27,7 @@ import co.mask.product.web.UpdateExec;
 import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
+import co.mask.product.web.ShowProductSeller;
 
 @WebServlet("/FrontController4")
 public class FrontController4 extends HttpServlet {
@@ -54,7 +55,7 @@ public class FrontController4 extends HttpServlet {
 		map.put("/toUpdateProduct.do", new ToUpdateProduct()); //상품수정 화면 가기
 		map.put("/updateExec.do", new UpdateExec()); //상품수정
 		map.put("/deleteExec.do", new DeleteExec()); //상품삭제
-		
+		map.put("/showProductSeller.do", new ShowProductSeller()); //판매자용 상품관리 
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

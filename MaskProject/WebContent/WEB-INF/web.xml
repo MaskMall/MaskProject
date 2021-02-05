@@ -7,6 +7,7 @@
 	<servlet>
 		<servlet-name>FrontController</servlet-name>
 		<servlet-class>co.mask.common.FrontController3</servlet-class>
+
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>FrontController</servlet-name>
