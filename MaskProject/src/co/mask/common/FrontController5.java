@@ -32,7 +32,6 @@ import co.mask.login.web.Login;
 import co.mask.login.web.LoginForm;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
-import co.mask.main.test.Test;
 import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
