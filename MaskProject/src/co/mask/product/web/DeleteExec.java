@@ -2,8 +2,10 @@ package co.mask.product.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.mask.common.Command;
+import co.mask.member.vo.MemberVo;
 import co.mask.product.dao.ProductDao;
 import co.mask.product.vo.ProductVo;
 
@@ -15,11 +17,20 @@ public class DeleteExec implements Command {
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 		
-		vo.setProductNum(Integer.parseInt(request.getParameter("row")));
+		//MemberVo mVo= new MemberVo();
+		
+		HttpSession session = request.getSession();
+		String valeu = (String)session.getAttribute("memberId");
+		vo.setMemberId(valeu);
+		
+		
+		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
+		
 		int n=dao.delete(vo);
 		
 		
-		return "showProduct.do";
+		
+		return "showProductSeller.do";
 	}
 
 }

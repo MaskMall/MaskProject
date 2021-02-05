@@ -6,6 +6,7 @@ public class ProductVo {
 	private int productQunt;
 	private int productPrice;
 	private String ProductSeller;
+	private String memberId;
 
 	public int getProductNum() {
 		return productNum;
@@ -46,4 +47,14 @@ public class ProductVo {
 	public void setProductSeller(String productSeller) {
 		ProductSeller = productSeller;
 	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+	
+	
 }
