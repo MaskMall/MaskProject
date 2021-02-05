@@ -28,7 +28,7 @@ import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
 
-@WebServlet("/FrontController")
+@WebServlet("/FrontController4")
 public class FrontController4 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Command> map = new HashMap<String, Command>();
