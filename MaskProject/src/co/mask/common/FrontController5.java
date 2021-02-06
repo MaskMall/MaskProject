@@ -93,7 +93,7 @@ public class FrontController5 extends HttpServlet {
 
 	//	map.put("/test.do", new Test()); //test중입니다.
 
-
+	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
