@@ -97,17 +97,16 @@ body {
             <a class="nav-link" href="boardListForm.do">문의페이지</a>
           </li>
           <li class="nav-item active">
-<<<<<<< HEAD
             <a class="nav-link" href="sellView.do">구매내역</a>
           </li>
-=======
+          <li class="nav-item active">
             <a class="nav-link" href="showProduct.do">상품조회</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="showProductSeller.do">상품관리</a>
           </li>
 
->>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
+
 
         </ul>
       </div>
