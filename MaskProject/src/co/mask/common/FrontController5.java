@@ -89,13 +89,10 @@ public class FrontController5 extends HttpServlet {
 		
 		
 		//FrontController5
-<<<<<<< HEAD
-=======
+
 
 	//	map.put("/test.do", new Test()); //test중입니다.
 
->>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
-	}
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

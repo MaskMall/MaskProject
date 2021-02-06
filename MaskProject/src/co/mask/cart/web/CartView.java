@@ -23,13 +23,8 @@ public class CartView implements Command {
 		vo.setCartUser((String) session.getAttribute("memberId"));
 		
 		list = dao.selectList(vo);
-<<<<<<< HEAD
+
 		request.setAttribute("cartList", list);
-=======
-		
-		request.setAttribute("cartList", list);
-		
->>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
 
 		return "view/cart/cartView";
 	}
