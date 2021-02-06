@@ -5,6 +5,11 @@
 <head> 
 <meta charset="UTF-8">
 <title>전체 게시글</title>
+
+<!-- jsp -->
+<jsp:include page="../main/menu.jsp"></jsp:include>
+
+
  <style type="text/css">
  	#wrap {
  		width: 800px;
