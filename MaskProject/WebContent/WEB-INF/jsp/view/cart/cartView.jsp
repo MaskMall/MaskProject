@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<!-- jsp -->
+<jsp:include page="../main/menu.jsp"></jsp:include>
+
+
 <style type="text/css">
 	input{
 		border: none;

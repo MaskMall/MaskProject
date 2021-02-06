@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<!-- jsp -->
+<jsp:include page="../main/menu.jsp"></jsp:include>
+
+
 <script type="text/javascript">
 	function updateUser(str){
 		frm.action = "userUpForm.do?row="+str;

@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<!-- jsp -->
+<jsp:include page="../main/menu.jsp"></jsp:include>
+
+
 </head>
 <body>
 	<div align="center">

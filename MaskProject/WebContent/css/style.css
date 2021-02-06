@@ -2,8 +2,8 @@
 	--body-background-color: #f5f6f7;
 	--font-color: #4e4e4e;
 	--border-gray-color : #dadada;
-	--naver-green-color: #EBE2FC;
-	--naver-green-border-color: ##EBE2FC;
+	--naver-green-color: #B8CAD9;
+	--naver-green-border-color: #B8CAD9;
 }
 
 
@@ -66,6 +66,8 @@ body{
 	border: solid 1px var(	--border-gray-color );
 	background: white;
 }
+
+
 .password-wrap{
 	margin-top: 13px;
 }
