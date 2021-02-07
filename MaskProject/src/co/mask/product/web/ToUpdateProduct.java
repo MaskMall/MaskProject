@@ -1,7 +1,7 @@
 
 package co.mask.product.web;
 
-import java.util.ArrayList;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,9 +18,9 @@ public class ToUpdateProduct implements Command {
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 		
-		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
+		vo.setProductNum(Integer.parseInt(request.getParameter("row")));
 		dao.select(vo);
-		request.setAttribute("list", vo);
+		request.setAttribute("vo", vo);
 		
 		return "view/product/updateProductForm";
 	}

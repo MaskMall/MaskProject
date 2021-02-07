@@ -18,7 +18,7 @@ public class ProductDao extends DAO{
 		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		ProductVo vo;
 		
-		String sql = "SELECT* FROM PRODUCT ORDER BY PRODUCTNUM";
+		String sql = "SELECT * FROM PRODUCT ORDER BY PRODUCTNUM";
 		try {
 			psmt=conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -125,6 +125,16 @@ public class ProductDao extends DAO{
 		return n;	
 	}
 	
+	//관리자 상품 삭제
+	public int deleteAdmin(ProductVo vo) {
+		int n=0;
+		String sql="";
+		
+		return n;
+		
+		
+		
+	}
 	
 	public void close() { //close 메소드
 		try {

@@ -33,6 +33,42 @@ th {
 }
 
 </style>
+<script>
+ function productInsert() {
+	 var form = document.frm;
+	 var name = form.productName;
+	 var qt = form.productQunt;
+	 var price = form.productPrice;
+	 var seller = form.ProductSeller;
+	 
+	 if (name.value == "") {
+		 alert("상품명을 입력하세요!");
+		 name.focus();
+		 return;
+	 }
+	 
+	 else if (qt.value == "") {
+		 alert("상품 수량을 입력하세요!");
+		 qt.focus();
+		 return;
+	 }
+	 
+	 else if (price.value == "") {
+		 alert("상품 가격을 입력하세요!");
+		 price.focus();
+		 return;
+	 }
+	 
+	 else if (seller.value == "") {
+		 alert("판매자 이름을 입력하세요!");
+		 seller.focus();
+		 return;
+	 }
+	 
+	  form.submit();
+ }
+
+</script>
 </head>
 <body>
 	<div align="center" class="inputt">
@@ -53,7 +89,7 @@ th {
 				</tr>	
 			</table><br/>
 			<div>
-				<button type="submit" >상품 등록</button>&nbsp;&nbsp;
+				<button type="button" onclick="productInsert()" >상품 등록</button>&nbsp;&nbsp;
 				<input type="reset" id="cancle" name="cancle" value="취소">&nbsp;&nbsp;
 				<button type="button" onclick="location.href = 'showProduct.do'">상품목록 가기</button>
 			</div>
