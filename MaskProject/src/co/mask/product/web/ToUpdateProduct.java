@@ -15,13 +15,12 @@ public class ToUpdateProduct implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// ToUpdateProduct.do 처리 메소드
-		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 		
 		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
-		list=dao.select(vo);
-		request.setAttribute("list", list);
+		dao.select(vo);
+		request.setAttribute("list", vo);
 		
 		return "view/product/updateProductForm";
 	}
