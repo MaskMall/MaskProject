@@ -18,7 +18,7 @@
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
-		var win = window.open("", "PopupWin", "width=450,height=800");
+		var win = window.open("", "PopupWin", "width=680,height=800");
 		frm.productNum.value = str;
 		frm.action = "nonMemberBootPay.do";
 		frm.submit();

@@ -18,7 +18,7 @@
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
-		var win = window.open("", "PopupWin", "width=450,height=800");
+		var win = window.open("", "PopupWin", "width=680,height=800");
 		frm.target = "PopupWin";
 		frm.cartProduct.value = str;
 		frm.action = "bootPay.do";
@@ -36,7 +36,7 @@
 </head>
 <body>
 	<div align="center">
-		<h1>cartView 페이지</h1>
+		<h1>회원 장바구니</h1>
 		<div>
 			<form action="" id="frm" name="frm" method="post">
 			<input type="hidden" name="cartProduct" id="cartProduct">

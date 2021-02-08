@@ -107,7 +107,7 @@ html, body {
 					
 					<c:if test="${memberAuth == 'SELLER'}">
 						<li class="nav-item active"><a class="nav-link"
-							href="sellView.do">판매내역</a></li>
+							href="sellerView.do">판매내역</a></li>
 						<li class="nav-item active"><a class="nav-link"
 							href="showProductSeller.do">상품관리</a></li>
 					</c:if>

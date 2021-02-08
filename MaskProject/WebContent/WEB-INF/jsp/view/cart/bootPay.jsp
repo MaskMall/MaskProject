@@ -26,6 +26,8 @@
 			console.log(data);
 		}).cancel(function(data) {
 			//결제가 취소되면 수행됩니다.
+			alert('결제가 취소되었습니다.');
+			window.close();
 			console.log(data);
 		}).close(function(data) {
 			// 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
@@ -34,6 +36,7 @@
 			//결제가 정상적으로 완료되면 수행됩니다
 			frm.submit();
 			alert('결제가 정상적으로 완료되었습니다.');
+			window.close();
 			console.log(data);
 		});
 	</script>

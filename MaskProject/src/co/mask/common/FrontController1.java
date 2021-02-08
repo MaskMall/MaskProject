@@ -51,7 +51,7 @@ import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
 import co.mask.sell.web.SellInsert;
-import co.mask.sell.web.SellView;
+import co.mask.sell.web.BuyerView;
 
 @WebServlet("/FrontController1")
 public class FrontController1 extends HttpServlet {
@@ -93,7 +93,7 @@ public class FrontController1 extends HttpServlet {
 		map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 장바구니 삭제
 		map.put("/nonMemberCart.do", new NonMemberCart()); // 장바구니 삭제
 		// Sell
-		map.put("/sellView.do", new SellView()); // 판매 내역 리스트
+		map.put("/sellView.do", new BuyerView()); // 판매 내역 리스트
 		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
 		// Product
 		map.put("/showProduct.do", new ShowProduct()); // 상품목록 조회
