@@ -91,8 +91,7 @@ function adminDelete(str) {
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 			  
-				 <tr class="row">
-				 
+				 <tr>
 				    <td width="70">${vo.productNum}</td>
 				    <td width="70">${vo.productName}</td>
 				    <td width="70">${vo.productQunt}</td>

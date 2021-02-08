@@ -7,6 +7,7 @@ public class ProductVo {
 	private int productPrice;
 	private String ProductSeller;
 	private String memberId;
+	private String image;
 
 	public int getProductNum() {
 		return productNum;
@@ -55,6 +56,15 @@ public class ProductVo {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 	
 	
 }

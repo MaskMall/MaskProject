@@ -6,6 +6,92 @@
 <head>
 
 <title>메인 페이지</title>
+<style>
+* {
+  transition: all 0.3s ease-out;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  color: #262626;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #666666;
+
+  &.small {
+    font-size: 14px;
+  }
+}
+
+
+
+.card {
+  display: block;
+  top: 0px;
+  position: relative;
+  max-width: 262px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #00838d;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(2.15);
+  }
+}
+
+}
+</style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script type="text/javascript">
 
@@ -44,7 +130,9 @@
      
 	elem_1 = $('<div />').addClass("card-body");
 	
-	let e1_h2 = $('<h2 />').addClass("card-title").html(val.productNum);
+	let e1_h2 = $('<h2 />').addClass("card-title");
+	let e1_img = $('<img />').attr('src','/MaskProject/img/'+val.image);
+	e1_img.addClass("card-img-top");
     
     elem_2 = $('<div />').addClass("card-footer");
 	
@@ -58,7 +146,7 @@
 	let e2_h5_2 = $('<h5 />').html(val.productQunt);
 	
     
-    
+    elem_1.append(e1_img);
     elem_1.append(e1_h2);
     elem_2.append(e2_p);
     elem_2.append(e2_h5);
