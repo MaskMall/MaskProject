@@ -13,8 +13,8 @@ public class BoardWirte implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		BoardDao dao = new BoardDao();
 		BoardVo vo = new BoardVo();
-		
-		vo.setBoardNumber(Integer.parseInt(request.getParameter("boardnumber")));
+		System.out.println("boardnumber");
+//		vo.setBoardNumber(Integer.parseInt(request.getParameter("boardnumber")));
 		vo.setBoardTitle(request.getParameter("boardtitle"));
 		vo.setBoardWriter(request.getParameter("boardwriter"));
 		vo.setBoardContent(request.getParameter("boardcontent"));
@@ -22,7 +22,7 @@ public class BoardWirte implements Command {
 		
 		dao.boardInsert(vo);
 		
-		return "boardListForm.do";
+		return "view/board/boardWriteForm";
 	}
 
 }
