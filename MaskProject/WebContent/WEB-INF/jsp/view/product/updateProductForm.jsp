@@ -34,12 +34,16 @@ th {
 }
 
 </style>
+<script>
+/*세션아이디가 같으면 상품수정 가능  */
+</script>
 </head>
 <body>
 <div align="center">
 	<div><h1>상품 수정</h1></div>
-		<form id="frm" name="frm" action="updateExec.do" method="post">
-			<table border="1" id="t01">
+	
+		<form id="frm" name="frm" action="updateExec.do?productNum=${vo.productNum }" method="post"> 
+			<table border="1" id="t01" class="row">
 				<tr >
 					<th width="150">상품 번호</th>
 				    <th width="150">상품 이름</th> 
@@ -47,23 +51,21 @@ th {
 				    <th width="150">상품 판매가격</th>
 				    <th width="150">판매자</th>
 				</tr>
-				<c:forEach var="vo" items="${list }">
-				<tr>
+				<tr >
 					<td width="150"><input type="text" name="productNum" value="${vo.productNum}" readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
 					<td width="150"><input type="text" name="productName" value="${vo.productName}" size="20" style="width:100%; border:0.5;"></td>
 					<td width="150"><input type="text" name="productQunt" value="${vo.productQunt}" size="20" style="width:100%; border:0.5;"></td>
 					<td width="150"><input type="text" name="productPrice" value="${vo.productPrice}" size="20" style="width:100%; border:0.5;" ></td>
-					<td width="150"><input type="text" name="ProductSeller" value="${vo.productSeller}"readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productSeller" value="${vo.productSeller}"readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
 				</tr>
-				</c:forEach>	
 			</table><br/>
 			<div>
-				<button type="submit" >수정</button>&nbsp;&nbsp;
+				<button type="submit">수정</button>&nbsp;&nbsp;
 				<input type="reset" id="cancle" name="cancle" value="취소">&nbsp;&nbsp;
 				<button type="button" onclick="location.href = 'showProduct.do'">상품목록 가기</button>
 				
 			</div>
-		</form>	
+		</form>
 
 	</div>
 </body>

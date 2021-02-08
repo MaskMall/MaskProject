@@ -1,7 +1,7 @@
 
 package co.mask.product.web;
 
-import java.util.ArrayList;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,13 +15,12 @@ public class ToUpdateProduct implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// ToUpdateProduct.do 처리 메소드
-		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 		
-		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
-		list=dao.select(vo);
-		request.setAttribute("list", list);
+		vo.setProductNum(Integer.parseInt(request.getParameter("row")));
+		dao.select(vo);
+		request.setAttribute("vo", vo);
 		
 		return "view/product/updateProductForm";
 	}

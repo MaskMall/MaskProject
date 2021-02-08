@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>문의 게시판</title>
+<title>Insert title here</title>
 <style>
 table {
 	width: 70%;
@@ -64,7 +64,7 @@ th {
 	<div class="container">
 		<div align="center">
 			<div>
-				<h2>문의 게시판</h2>
+				<h2>공지 목록</h2>
 			</div>
 			<table border="1" id="t01">
 				<tr>
@@ -86,23 +86,13 @@ th {
 					</tr>
 				</c:forEach>
 			</table>
+			<br />
 		</div>
-		<br>
-	<!-- <div id="pageForm">페이지번호</div>  -->	
-		<br>
-		<div align="center"  id="searchForm">
-			<form>
-				<select name="opt">
-					<option value="0">제목</option>
-					<option value="1">내용</option>
-					<option value="2">제목+내용</option>
-					<option value="3">글쓴이</option>
-				</select> <input type="text" size="20" name="condition" />&nbsp; <input
-					type="submit" value="검색" />&nbsp;&nbsp;
-				<button type="button" title="글쓰기"
-					onclick="location.href='boardWirteForm.do'">글쓰기</button>
-			</form>
+
+		<div align="center">
+			<button type="button" onclick="location.href = 'main.do'">홈으로</button>
 		</div>
 	</div>
 </body>
+
 </html>

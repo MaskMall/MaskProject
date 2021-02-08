@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.mask.common.Command;
-import co.mask.member.vo.MemberVo;
 import co.mask.product.dao.ProductDao;
 import co.mask.product.vo.ProductVo;
 

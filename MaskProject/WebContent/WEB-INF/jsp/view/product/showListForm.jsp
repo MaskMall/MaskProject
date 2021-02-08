@@ -61,13 +61,23 @@ th {
 }
 
 </style>
+<script>
+function adminDelete(str) {
+	var deletee = confirm("정말 삭제하시겠습니까?");
+	if (deletee) {
+		frm.action = "deleteAdminExec.do?row=" + str;
+		frm.submit();
+	}
+}
+
+</script>
 </head>
 <body>
 
 <jsp:include page="../main/menu.jsp"></jsp:include>
- <div class="container">
   <div align="center">
   	<div><h2>상품 목록</h2></div>
+  	<form id="frm" name="frm" method="post">
 	<table border="1" id="t01">
 		  <tr>
 		    <th width="70" >상품 번호</th>
@@ -75,6 +85,9 @@ th {
 		    <th width="70">상품 수량</th>
 		    <th width="70">상품 판매가격</th>
 		    <th width="70">해당 판매자</th>
+		    <c:if test= "${MemberVo.memberAuth eq 'ADMIN'}">
+		    <th width="70">삭제</th>
+		    </c:if>
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 			  
@@ -85,9 +98,13 @@ th {
 				    <td width="70">${vo.productQunt}</td>
 				    <td width="70">${vo.productPrice}</td>
 				    <td width="70">${vo.productSeller}</td>
+			 <c:if test= "${MemberVo.memberAuth eq 'ADMIN'}">	    
+				    <td><button type="button" onclick="adminDelete(('${vo.productNum}'))" >삭제</button></td>
+			 </c:if>	    
 		  	  </tr>
 		  </c:forEach>	   
 	</table>
+	</form>
 	<br/>
 </div>
 

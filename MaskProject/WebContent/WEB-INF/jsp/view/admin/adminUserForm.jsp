@@ -36,14 +36,14 @@
 					<th width="100">회원 아이디</th>
 					<th width="100">회원명</th>
 					<th width="200">전화번호</th>
-					<th width="100">주소</th>
+					<th width="300">주소</th>
 					<th width="200">이메일</th>
 					<th width="100">권한</th>
 					<th width="100">수정</th>
 					<th width="100">삭제</th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
-					<tr class="row">
+					<tr>
 						<td align="center">${vo.memberId }</td>
 						<td align="center">${vo.memberName }</td>
 						<td align="center">${vo.memberPhone }</td>

@@ -18,7 +18,7 @@ public class ProductDao extends DAO{
 		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
 		ProductVo vo;
 		
-		String sql = "SELECT* FROM PRODUCT ORDER BY PRODUCTNUM";
+		String sql = "SELECT * FROM PRODUCT ORDER BY PRODUCTNUM";
 		try {
 			psmt=conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -32,7 +32,7 @@ public class ProductDao extends DAO{
 				list.add(vo);
 			}
 		}catch(SQLException e) {
-			
+			e.printStackTrace();
 		}finally {
 			close();
 		}
@@ -40,28 +40,25 @@ public class ProductDao extends DAO{
 	}
 	
 	//상품 한건 조회
-	public ArrayList<ProductVo> select(ProductVo vo) {
-		ArrayList<ProductVo> list = new ArrayList<ProductVo>();
+	public ProductVo select(ProductVo vo) {
 		String sql = "SELECT* FROM PRODUCT WHERE PRODUCTNUM=?";
 		try {
 			psmt=conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getProductNum());
 			rs = psmt.executeQuery();
-			while (rs.next()) {
-				vo=new ProductVo();
+			if (rs.next()) {
 				vo.setProductNum(rs.getInt("productNum"));
 				vo.setProductName(rs.getString("productName"));
 				vo.setProductQunt(rs.getInt("productQunt"));
 				vo.setProductPrice(rs.getInt("productPrice"));
 				vo.setProductSeller(rs.getString("productSeller"));
-				list.add(vo);
 			}
 		}catch(SQLException e) {
-			
+			e.printStackTrace();
 		}finally {
 			close();
 		}
-		return list;
+		return vo;
 	}
 		
 	
@@ -128,6 +125,16 @@ public class ProductDao extends DAO{
 		return n;	
 	}
 	
+	//관리자 상품 삭제
+	public int deleteAdmin(ProductVo vo) {
+		int n=0;
+		String sql="";
+		
+		return n;
+		
+		
+		
+	}
 	
 	public void close() { //close 메소드
 		try {
