@@ -94,7 +94,7 @@ public class CartDao extends DAO {
 		return n;
 	}
 	
-	//관리자 상품 삭제**
+	//관리자 상품 삭제
 		public int deleteAdmin(CartVo vo) {
 			int n=0;
 			String sql="DELETE FROM PRODUCT WHERE PRODUCTNUM IN(SELECT C.CARTPRODUCT FROM CART C WHERE C.CARTPRODUCT=?)";
