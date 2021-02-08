@@ -58,8 +58,8 @@ function adminDelete(str) {
 	var deletee = confirm("정말 삭제하시겠습니까?");
 	console.log(str);
 	if (deletee) {
+		frm.action ="deleteAdminExec.do?row="+str;
 		frm.submit();
-		location href="deleteAdminExec.do";
 	}else{
 		alert("취소하였습니다");
 	}
@@ -80,29 +80,30 @@ function adminDelete(str) {
 		    <th width="70">상품 수량</th>
 		    <th width="70">상품 판매가격</th>
 		    <th width="70">해당 판매자</th>
-		    <c:if test= "${MemberVo.memberAuth eq ADMIN}">
+		    <c:if test="${memberAuth eq 'ADMIN'}">
 		    <th width="70">삭제</th>
 		    </c:if>
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 			  
-				 <tr class="row">
+				 <tr >
 				 
 				    <td width="70">${vo.productNum}</td>
 				    <td width="70">${vo.productName}</td>
 				    <td width="70">${vo.productQunt}</td>
 				    <td width="70">${vo.productPrice}</td>
 				    <td width="70">${vo.productSeller}</td>
-					<td><c:if test= "${MemberVo.memberAuth eq ADMIN}">	  
+					<c:if test="${memberAuth eq 'ADMIN'}">
+					<td>
 			 			<button type="button" onclick="adminDelete(${vo.productNum})" >삭제</button>
-				    	
-			 </c:if>
-			 </td>	    
+			 		</td>	    
+						 </c:if>
 		  	  </tr>
 		  </c:forEach>	   
 	</table>
 	</form>
 	<br/>
+						
 </div>
 
 			<div align="center">
