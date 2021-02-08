@@ -16,16 +16,20 @@ public class NonMemberCart implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
-		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
-
-		dao.select(vo);
-
 		HttpSession session = request.getSession();
-		ArrayList<ProductVo> arr = (ArrayList) session.getAttribute("arr");
-		if (arr == null) arr = new ArrayList<ProductVo>();
-		arr.add(vo);
-
-		session.setAttribute("NonMemberList", arr);
+		
+		if (request.getParameter("productNum") != null) {
+			vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
+			dao.select(vo);
+			
+			@SuppressWarnings({ "unchecked", "rawtypes" })
+			ArrayList<ProductVo> arr = (ArrayList) session.getAttribute("arr");
+			if (arr == null) arr = new ArrayList<ProductVo>();
+			
+			arr.add(vo);
+			
+			session.setAttribute("NonMemberList", arr);
+		}
 
 		return "view/cart/nonMemberCart";
 	}

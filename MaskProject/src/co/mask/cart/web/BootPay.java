@@ -16,7 +16,6 @@ public class BootPay implements Command {
 		vo.setCartProduct(Integer.parseInt(request.getParameter("cartProduct")));
 		vo.setCartUser(request.getParameter("cartUser"));
 		
-		
 		dao.select(vo);
 		request.setAttribute("vo", vo);
 		
