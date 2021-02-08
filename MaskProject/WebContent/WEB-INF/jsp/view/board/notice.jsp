@@ -90,7 +90,7 @@ th {
 		</div>
 
 		<div align="center">
-			<button type="button" onclick="location.href = 'main.do'">홈으로!</button>
+			<button type="button" onclick="location.href = 'main.do'">홈으로</button>
 		</div>
 	</div>
 </body>

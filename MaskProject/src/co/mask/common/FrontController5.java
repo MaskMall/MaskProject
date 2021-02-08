@@ -38,6 +38,9 @@ import co.mask.product.web.ShowProduct;
 import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
+import test.AdminUserFormTest;
+import test.ShowBoardTest;
+import test.ShowProductTest;
 
  
 @WebServlet("/FrontController5")
@@ -89,10 +92,13 @@ public class FrontController5 extends HttpServlet {
 		
 		
 		//FrontController5
+		
 
 
-	//	map.put("/test.do", new Test()); //test중입니다.
-
+		map.put("/showProductTest.do", new ShowProductTest()); //test중입니다.
+		map.put("/showBoardTest.do", new ShowBoardTest());
+		map.put("/adminUserFormTest.do", new AdminUserFormTest());
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 글쓰기</title>
+<title>게시글 등록하기</title>
 
 <style type="text/css">
 #title {
@@ -17,40 +17,41 @@
 
 </head>
 <body>
+<jsp:include page="../main/menu.jsp" />
+	<div id="wrap" align="center">
+		<h1>게시글 등록</h1>
 
-	<br>
-	<b><font size="6" color="blue">글쓰기</font></b>
-	<br>
+		<form name="boardForm" method="post" action="boardWirte.do" 
+			enctype="multipart/form-data">
+			<input type="hidden" name="boardWriter"
+				value="${sessionScope.sessionID }">
+			<table  border="1">
+				<tr>
+					<th>작성자</th>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td><input type="text" name="boardTitle"  /></td>
+				</tr>
+				<tr>
+					<td id="title">내용</td>
+					<td><textarea name="#" rows="10" cols="40" ></textarea></td>
+				</tr>
+				<tr>
+					<td id="title">파일첨부</td>
+					<td><input type="file" name="boardFile" /></td>
+				</tr>
 
-	<form method="post" action="BoardWriteAction.bo" name="boardForm" enctype="multipart/form-data">
-		<input type="hidden" name="board_id" value="${sessionScope.sessionID }">
-		<table width="700" border="3" align="center">
-			<tr>
-				<td id="title">작성자</td>
-				<td>${sessionScope.sessionID }</td>
-			</tr>
-			<tr>
-				<td id="title">제목</td>
-				<td><input name="board_subject" type="text" size="70"
-					maxlength="100" value="" /></td>
-			</tr>
-			<tr>
-				<td id="title">내용</td>
-				<td><textarea name="#" rows="72" cols="20"></textarea></td>
-			</tr>
-			<tr>
-				<td id="title">파일첨부</td>
-				<td><input type="file" name="boardFile" /></td>
-			</tr>
-
-			<tr align="center" valign="middle">
-				<td colspan="5">
+				<tr align="center" valign="middle">
+					<td colspan="5"><input type="submit" value="등록"> 
 					<input type="reset" value="작성취소"> 
-					<input type="submit" value="등록"> 
-					<input type="button" value="목록">
-				</td>
-			</tr>
-		</table>
-	</form>
+					<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
+
 </html>
