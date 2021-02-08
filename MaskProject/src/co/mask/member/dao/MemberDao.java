@@ -105,7 +105,7 @@ public class MemberDao extends DAO {
 	// 회원의 회원수정
 	public int update(MemberVo vo) {
 		int n = 0;
-		String sql = "UPDATE MEMBER SET MEMBERNAME=?, MEMBERPHONE=?, MEMBERADDRESS=?, MEMBEREMAIL=?, MEMBERPASSWORD=?  WHERE MEMBERID=?";
+		String sql = "UPDATE MEMBER SET MEMBERNAME=?, MEMBERPHONE=?, MEMBERADDRESS=?, MEMBEREMAIL=?, MEMBERPASSWORD=?, MEMBERZIPCODE=? WHERE MEMBERID=?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getMemberName());
@@ -113,7 +113,8 @@ public class MemberDao extends DAO {
 			psmt.setString(3, vo.getMemberAddress());
 			psmt.setString(4, vo.getMemberEmail());
 			psmt.setString(5, vo.getMemberPassword());
-			psmt.setString(6, vo.getMemberId());
+			psmt.setString(6, vo.getMemberZipcode());
+			psmt.setString(7, vo.getMemberId());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

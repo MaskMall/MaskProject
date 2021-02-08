@@ -17,15 +17,15 @@
 
 </head>
 <body>
-
+<jsp:include page="../main/menu.jsp" />
 	<div id="wrap" align="center">
 		<h1>게시글 등록</h1>
 
-		<form name="boardForm" method="post" action="BoardWriteAction.bo" 
+		<form name="boardForm" method="post" action="boardWirte.do" 
 			enctype="multipart/form-data">
 			<input type="hidden" name="boardWriter"
 				value="${sessionScope.sessionID }">
-			<table  border="1" align="center">
+			<table  border="1">
 				<tr>
 					<th>작성자</th>
 					<td><input type="text" name="name"></td>

@@ -41,23 +41,36 @@
 						<th>장바구니 번호</th>
 						<th>구 매 자</th>
 						<th>상품 번호</th>
+						<th>상 품 명</th>
+						<th>상품 가격</th>
 						<th>구매 수량</th>
+						<th>판 매 자</th>
 						<th>구 매</th>
 						<th>삭 제</th>
 					</tr>
-					<c:forEach var="vo" items="${cartList }">
-						<tr>
-							<td>${vo.cartNumber }</td>
-							<td>${vo.cartUser }</td>
-							<td>${vo.cartProduct }</td>
-							<td>${vo.cartSelect }</td>
-							<td><button type="button" onclick="buyProduct(${vo.cartProduct})">구 매</button></td>
-							<td>
-								<button type="button" onclick="DeleteProduct(${vo.cartNumber})">삭 제</button>
-								<input type="hidden" name="cartUser" id="cartUser" value=${vo.cartUser }>
-							</td>
+					<c:if test="${empty cartList }">
+						<tr align="center">
+							<th>장바구니에 등록된 상품이 없습니다.</th>
 						</tr>
-					</c:forEach>
+					</c:if>
+					<c:if test="${not empty cartList }">
+						<c:forEach var="vo" items="${cartList }">
+							<tr>
+								<td>${vo.cartNumber }</td>
+								<td>${vo.cartUser }</td>
+								<td>${vo.cartProduct }</td>
+								<td>${vo.productName }</td>
+								<td>${vo.productPrice }</td>
+								<td>${vo.cartSelect }</td>
+								<td>${vo.productSeller }</td>
+								<td><button type="button" onclick="buyProduct(${vo.cartProduct})">구 매</button></td>
+								<td>
+									<button type="button" onclick="DeleteProduct(${vo.cartNumber})">삭 제</button>
+									<input type="hidden" name="cartUser" id="cartUser" value=${vo.cartUser }>
+								</td>
+							</tr>
+						</c:forEach>
+					</c:if>
 				</table>
 			</form>
 		</div>

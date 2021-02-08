@@ -55,7 +55,7 @@ public class BoardDao extends DAO {
 		boolean result = false;
 
 		try {
-			String sql = "INSERT INTO BOARD " + "( BOARDNUM, BOARDWRITER, BOARDTITLE, BOARDCONTENT, BOARDFILE)"
+			String sql = "INSERT INTO BOARD " + "( BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT, BOARDFILE)"
 					+ "VALUES(?,?,?,?,?)";
 
 			int n = vo.getBoardNumber();
