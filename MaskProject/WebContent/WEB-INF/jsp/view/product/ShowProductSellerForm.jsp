@@ -55,32 +55,39 @@ th {
 
 </style>
 <script>
-function updateproduct(str) {
-	 var form = document.frm;
+function updateproduct(str4,str5,str6) {
 	 var msg = confirm("정말 수정하시겠습니까?");
 	 if(msg){
-		 form.action="toUpdateProduct.do?row="+str;
-		 form.submit();	 
+		 if(str6 != str5){
+			 elert("수정권한이 없습니다.");
+		 }else{
+			 frm.action="toUpdateProduct.do?row="+str;
+			 frm.submit();	 
+		 }
+		 
+	 }else{
+		 alert("취소 하였습니다.");
 	 }
 	 
 	 
 }
 
-function PdDelete(){
-	let deletee = confirm("정말 삭제하시겠습니까?");
+function PdDelete(str,str2,str3){
+	var deletee = confirm("정말 삭제하시겠습니까?");
+	//console.log(str, str2);
 	if(deletee){
+		if(str3 != str2){
+			alert("삭제권한이 없습니다.")
+		}else{
+			frm.action="deleteExec.do?row="+str;
+			frm.submit();
+		}
 		
-		location.href="deleteExec.do";
-	}
-	else{
-		alert("삭제 하였습니다.");
+	}else{
+		alert("취소 하였습니다.");
 	}
 	
 }
-function elertDelete(){
-	
-		alert("해당 상품은 출고중이므로 삭제 불가합니다.");
-	}
 	
 
 </script>
@@ -111,10 +118,9 @@ function elertDelete(){
 				    <td width="70">${vo.productPrice}</td>
 				    <td width="70">${vo.productSeller}</td>
 			        <td>
-						<button type="button" onclick = "updateproduct('${vo.productNum}')" >수  정</button></td>
+						<button type="button" onclick = "updateproduct('${vo.productNum}','${vo.productSeller }','${memberId }')" >수  정</button></td>
 			  	 	<td>
-						<button type="button" onclick="PdDelete()" >삭  제</button>
-			  	 		<button type="button" onclick="elertDelete()">삭  제</button>
+						<button type="button" onclick="PdDelete(${vo.productNum},'${vo.productSeller }','${memberId }')" >삭  제</button>
 			  	 		
 		  	  </tr>
 		  	  </c:forEach>

@@ -69,7 +69,7 @@ function adminDelete(str) {
 		frm.action ="deleteAdminExec.do?row="+str;
 		frm.submit();
 	}else{
-		alert("취소하였습니다");
+		alert("취소 하였습니다");
 	}
 }
 

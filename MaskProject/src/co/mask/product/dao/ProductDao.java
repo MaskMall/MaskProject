@@ -110,7 +110,7 @@ public class ProductDao extends DAO{
 	//판매자 상품 삭제
 	public int delete(ProductVo vo) {
 		int n=0;
-		String sql="delete from product where PRODUCTSELLER IN ( select m.memberid from member m where m.memberid=?) and productnum=?";
+		String sql="DELETE FROM PRODUCT WHERE PRODUCTSELLER IN ( SELECT M.MEMBERID FROM MEMBER M WHERE M.MEMBERID=?) AND PRODUCTNUM=?";
 		
 		try {
 			psmt=conn.prepareStatement(sql);

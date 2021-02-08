@@ -16,18 +16,12 @@ public class DeleteExec implements Command {
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 
-		
-		//MemberVo mVo= new MemberVo();
-		
 		HttpSession session = request.getSession();
 		String valeu = (String)session.getAttribute("memberId");
 		vo.setMemberId(valeu);
-		
-		
-		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
+		vo.setProductNum(Integer.parseInt(request.getParameter("row")));
 		
 		int n=dao.delete(vo);
-		
 		
 		
 		return "showProductSeller.do";
