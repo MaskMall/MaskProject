@@ -43,8 +43,8 @@
 					<td><input type="file" name="boardFile" /></td>
 				</tr>
 
-				<tr align="center" valign="middle">
-					<td colspan="5"><input type="submit" value="등록"> 
+				<tr align="center" valign="middle"> <td colspan="5">
+					<input type="submit" value="등록"> 
 					<input type="reset" value="작성취소"> 
 					<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
 					</td>
