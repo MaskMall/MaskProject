@@ -93,14 +93,14 @@ public class FrontController5 extends HttpServlet {
 		
 		//FrontController2
 		//Main
-				map.put("/main.do", new MainPage());
-				//Member
-				map.put("/joinForm.do", new JoinForm());	//회원가입 폼 호출
-				map.put("/idCheck.do", new IdCheck());	//아이디 중복체크
-				map.put("/join.do", new Join()); 	//회원가입
-				map.put("/loginForm.do", new LoginForm());	//로그인 폼 호출
-				map.put("/login.do", new Login()); 	//로그인
-				map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
+		map.put("/main.do", new MainPage());
+		//Member
+		map.put("/joinForm.do", new JoinForm());	//회원가입 폼 호출
+		map.put("/idCheck.do", new IdCheck());	//아이디 중복체크
+		map.put("/join.do", new Join()); 	//회원가입
+		map.put("/loginForm.do", new LoginForm());	//로그인 폼 호출
+		map.put("/login.do", new Login()); 	//로그인
+		map.put("/menu.do", new Menu()); //메뉴 확인하려고 index에서 바로 menu로 변경해보았습니다.
 				//Cart
 				map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
 				map.put("/bootPay.do", new BootPay()); // bootPay 결제
