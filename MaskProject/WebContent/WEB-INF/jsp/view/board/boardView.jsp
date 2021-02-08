@@ -7,7 +7,6 @@
 <title>문의글 내용 보기</title>
 </head>
 <body>
-	<jsp:include page="../main/menu.jsp" />
 	<div align="center">
 		<div>
 			<h1>문의글 내용보기</h1>
@@ -30,8 +29,8 @@
 				<td align="center">${vo.boardHit }</td>
 			</tr>
 		</table>
-		<br> <input type="#" value="수정">&nbsp;&nbsp;&nbsp; 
-		<input type="#" value="삭제"> &nbsp;&nbsp;&nbsp; 
+		<br><button type="button">수정</button>&nbsp;&nbsp;&nbsp; 
+		<button type="button">삭제</button>&nbsp;&nbsp;&nbsp; 
 		<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
 	</div>
 

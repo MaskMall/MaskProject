@@ -17,15 +17,12 @@
 
 </head>
 <body>
-<jsp:include page="../main/menu.jsp" />
 	<div id="wrap" align="center">
 		<h1>게시글 등록</h1>
 
-		<form name="boardForm" method="post" action="boardWirte.do" 
+		<form action="boardWirte.do"  method="post" 
 			enctype="multipart/form-data">
-			<input type="hidden" name="boardWriter"
-				value="${sessionScope.sessionID }">
-			<table  border="1">
+			<table width="600"  border="1">
 				<tr>
 					<th>작성자</th>
 					<td><input type="text" name="name"></td>
@@ -43,7 +40,7 @@
 					<td><input type="file" name="boardFile" /></td>
 				</tr>
 
-				<tr align="center" valign="middle"> <td colspan="5">
+				<tr align="center" valign="middle"> <td colspan="2">
 					<input type="submit" value="등록"> 
 					<input type="reset" value="작성취소"> 
 					<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
