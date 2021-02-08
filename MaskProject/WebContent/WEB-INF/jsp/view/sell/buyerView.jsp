@@ -36,7 +36,7 @@
 								<td>${vo.sellQunt }</td>
 								<td>${vo.productSeller }</td>
 								<td>${vo.sellDate }</td>
-							</tr>
+							</tr> 
 						</c:forEach>
 					</c:if>
 				</table><br/>
