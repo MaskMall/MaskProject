@@ -14,7 +14,7 @@ public class CartDao extends DAO {
 
 	public ArrayList<CartVo> selectList(CartVo vo) { // 유저 장바구니 리스트 조회
 		ArrayList<CartVo> list = new ArrayList<CartVo>();
-		String sql = "SELECT * FROM CART WHERE CARTUSER = ?";
+		String sql = "SELECT * FROM CART C, PRODUCT P WHERE CARTUSER = ? AND C.CARTPRODUCT = P.PRODUCTNUM";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getCartUser());
@@ -25,6 +25,9 @@ public class CartDao extends DAO {
 				vo.setCartUser(rs.getString("cartuser"));
 				vo.setCartProduct(rs.getInt("cartproduct"));
 				vo.setCartSelect(rs.getInt("cartselect"));
+				vo.setProductName(rs.getString("productname"));
+				vo.setProductPrice(rs.getInt("productprice"));
+				vo.setProductSeller(rs.getString("productseller"));
 				list.add(vo);
 			}
 		} catch (SQLException e) {
@@ -72,6 +75,21 @@ public class CartDao extends DAO {
 			e.printStackTrace();
 		} finally {
 			close();
+		}
+		return n;
+	}
+	
+	public int insert(CartVo vo) { //장바구니 추가
+		int n = 0;
+		String sql = "INSERT INTO CART VALUES(SEQCART.NEXTVAL, ?, ?, ?)";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getCartUser());
+			psmt.setInt(2, vo.getCartProduct());
+			psmt.setInt(3, vo.getCartSelect());
+			n = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return n;
 	}

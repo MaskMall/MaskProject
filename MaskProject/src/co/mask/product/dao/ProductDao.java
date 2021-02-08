@@ -29,6 +29,7 @@ public class ProductDao extends DAO{
 				vo.setProductQunt(rs.getInt("productQunt"));
 				vo.setProductPrice(rs.getInt("productPrice"));
 				vo.setProductSeller(rs.getString("productSeller"));
+				vo.setImage(rs.getString("image"));
 				list.add(vo);
 			}
 		}catch(SQLException e) {

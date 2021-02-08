@@ -36,6 +36,7 @@
 					<th width="100">회원 아이디</th>
 					<th width="100">회원명</th>
 					<th width="200">전화번호</th>
+					<th width="100">우편번호</th>
 					<th width="300">주소</th>
 					<th width="200">이메일</th>
 					<th width="100">권한</th>
@@ -47,6 +48,7 @@
 						<td align="center">${vo.memberId }</td>
 						<td align="center">${vo.memberName }</td>
 						<td align="center">${vo.memberPhone }</td>
+						<td align="center">${vo.memberZipcode }</td>
 						<td align="center">${vo.memberAddress }</td>
 						<td align="center">${vo.memberEmail }</td>
 						<td align="center">${vo.memberAuth }</td>

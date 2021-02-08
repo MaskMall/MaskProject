@@ -7,7 +7,7 @@
 <title>전체 게시글</title>
 
 <!-- jsp -->
-<jsp:include page="../main/menu.jsp"></jsp:include>
+<jsp:include page="../main/menu.jsp" />
 
 
  <style type="text/css">
@@ -27,20 +27,12 @@
  	}	
  </style>
  
- 
- 	<script type="text/javascript">
- 		function writeForm(){
- 			location.href="BoardWriteForm.bo";
- 		}
- 	</script>
+  
 </head>
 <body>
 	<div id="wrap">
 		<br>
 		<div id="topForm">
-			<c:if test="${sessionScope.sessionID!=null }">
-				<input type="button" value="글쓰기" onclick="writeForm()">
-			</c:if>
 		</div>
 		<br>
 		<form id="frm" name="frm" method="post">
@@ -80,7 +72,7 @@
 				</select>
 				<input type="text" size="20" name="condition" />&nbsp;
 				<input type="submit" value="검색"/>&nbsp;&nbsp;
-				<button type="button" onclick="loaction.href='boardWirteForm.do'">글쓰기</button>
+				<button type="button" title="글쓰기" onclick="location.href='boardWirte.do'">글쓰기</button>
 				
 			</form>
 		</div>

@@ -10,7 +10,7 @@ import co.mask.common.Command;
 import co.mask.sell.dao.SellDao;
 import co.mask.sell.vo.SellVo;
 
-public class SellView implements Command {
+public class SellerView implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -19,12 +19,12 @@ public class SellView implements Command {
 		SellDao dao = new SellDao();
 		SellVo vo = new SellVo();
 		HttpSession session = request.getSession();
-		vo.setSellUser((String) session.getAttribute("memberId"));
+		vo.setProductSeller((String) session.getAttribute("memberId"));
 
-		list = dao.selectList(vo);
+		list = dao.selectListSeller(vo);
 		request.setAttribute("list", list);
 		
-		return "view/sell/sellView";
+		return "view/sell/sellerView";
 	}
 
 }
