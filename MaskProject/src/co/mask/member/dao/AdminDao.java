@@ -28,6 +28,7 @@ public class AdminDao extends DAO {
 				vo.setMemberAddress(rs.getString("MEMBERADDRESS"));
 				vo.setMemberEmail(rs.getString("MEMBEREMAIL"));
 				vo.setMemberAuth(rs.getString("MEMBERAUTH"));
+				vo.setMemberZipcode(rs.getString("MEMBERZIPCODE"));
 				list.add(vo);
 			}
 		} catch (SQLException e) {
@@ -53,6 +54,7 @@ public class AdminDao extends DAO {
 				vo.setMemberAddress(rs.getString("MEMBERADDRESS"));
 				vo.setMemberEmail(rs.getString("MEMBEREMAIL"));
 				vo.setMemberAuth(rs.getString("MEMBERAUTH"));
+				vo.setMemberZipcode(rs.getString("MEMBERZIPCODE"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -65,14 +67,15 @@ public class AdminDao extends DAO {
 	//관리자의 회원, 거래처 수정
 	public int update(MemberVo vo) {
 		int n = 0;
-		String sql = "UPDATE MEMBER SET MEMBERNAME=?, MEMBERPHONE=?, MEMBERADDRESS=?, MEMBEREMAIL=? WHERE MEMBERID=?";
+		String sql = "UPDATE MEMBER SET MEMBERNAME=?, MEMBERPHONE=?, MEMBERADDRESS=?, MEMBEREMAIL=?, MEMBERZIPCODE=? WHERE MEMBERID=?";
 		try {
 			psmt=conn.prepareStatement(sql);
 			psmt.setString(1, vo.getMemberName());
 			psmt.setString(2, vo.getMemberPhone());
 			psmt.setString(3, vo.getMemberAddress());
 			psmt.setString(4, vo.getMemberEmail());
-			psmt.setString(5, vo.getMemberId());
+			psmt.setString(5, vo.getMemberZipcode());
+			psmt.setString(6, vo.getMemberId());
 			n = psmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -114,6 +117,7 @@ public class AdminDao extends DAO {
 				vo.setMemberAddress(rs.getString("MEMBERADDRESS"));
 				vo.setMemberEmail(rs.getString("MEMBEREMAIL"));
 				vo.setMemberAuth(rs.getString("MEMBERAUTH"));
+				vo.setMemberZipcode(rs.getString("MEMBERZIPCODE"));
 				list.add(vo);
 			}
 		} catch (SQLException e) {

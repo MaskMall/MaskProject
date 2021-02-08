@@ -45,6 +45,10 @@
 						<td align="center">${vo.memberPhone }</td>
 					</tr>
 					<tr>
+						<th>우편번호</th>
+						<td align="center">${vo.memberZipcode }</td>
+					</tr>
+					<tr>
 						<th>주소</th>
 						<td align="center">${vo.memberAddress }</td>
 					</tr>
@@ -59,6 +63,7 @@
 				</table><br/>
 				<button type="button" onclick="updateUser('${vo.memberId}')">회원 수정</button>
 				<button type="submit" onclick="deleteUser('${vo.memberId}')">회원 탈퇴</button>
+				<button type="button" onclick="location.href='main.do'">홈으로</button>
 			</c:forEach>
 		</form>
 	</div>

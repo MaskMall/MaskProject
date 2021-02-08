@@ -19,7 +19,8 @@ public class UserUpdate implements Command {
 		vo.setMemberAddress(request.getParameter("memberAddress"));
 		vo.setMemberEmail(request.getParameter("memberEmail"));
 		vo.setMemberId(request.getParameter("memberId"));
-
+		vo.setMemberZipcode(request.getParameter("memberZipcode"));
+		
 		int n = dao.update(vo);
 		
 		String viewPage = null;
