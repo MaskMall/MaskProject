@@ -15,6 +15,7 @@ import co.mask.board.web.BoardListForm;
 import co.mask.board.web.BoardView;
 import co.mask.board.web.BoardWirte;
 import co.mask.board.web.Hedaer;
+import co.mask.board.web.Notice;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
 
@@ -37,7 +38,7 @@ public class FrontController3 extends HttpServlet {
 		map.put("/boardWirteForm.do", new BoardWirte());
 		map.put("/header.do", new Hedaer());
 		map.put("/boardView.do", new BoardView());
-	
+		map.put("/notice.do", new Notice());
 	}
 
 
