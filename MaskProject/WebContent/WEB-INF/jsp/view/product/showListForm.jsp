@@ -94,12 +94,8 @@ function adminDelete(str) {
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 			  
-<<<<<<< HEAD
-				 <tr >
-				 
-=======
 				 <tr>
->>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
+
 				    <td width="70">${vo.productNum}</td>
 				    <td width="70">${vo.productName}</td>
 				    <td width="70">${vo.productQunt}</td>

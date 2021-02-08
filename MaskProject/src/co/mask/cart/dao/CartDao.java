@@ -93,6 +93,25 @@ public class CartDao extends DAO {
 		}
 		return n;
 	}
+	
+	//관리자 상품 삭제
+		public int deleteAdmin(CartVo vo) {
+			int n=0;
+			String sql="DELETE FROM PRODUCT WHERE PRODUCTNUM IN(SELECT C.CARTPRODUCT FROM CART C WHERE C.CARTPRODUCT=?)";
+			
+			try {
+				psmt=conn.prepareStatement(sql);
+				psmt.setInt(1, vo.getCartProduct());
+				
+				n=psmt.executeUpdate();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return n;
+			
+		}
 
 	public void close() { // close 메소드
 		try {

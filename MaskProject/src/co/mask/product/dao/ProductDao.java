@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import co.mask.cart.vo.CartVo;
 import co.mask.common.DAO;
 import co.mask.product.vo.ProductVo;
 
@@ -126,24 +127,7 @@ public class ProductDao extends DAO{
 		return n;	
 	}
 	
-	//관리자 상품 삭제
-	public int deleteAdmin(ProductVo vo) {
-		int n=0;
-		String sql="DELETE FROM PRODUCT WHERE PRODUCTNUM=?";
-		
-		try {
-			psmt=conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getProductNum());
-			
-			n=psmt.executeUpdate();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		return n;
-		
-	}
+	
 	
 	public int productUpDown(ProductVo vo) { //갯수 증가 감소
 	      int n=0;
