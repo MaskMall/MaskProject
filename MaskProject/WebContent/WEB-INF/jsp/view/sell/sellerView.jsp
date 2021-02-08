@@ -6,7 +6,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+		
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Sell List'],
+        <c:forEach var="vo" items="${list }">
+       		['${vo.productName}', ${vo.sellQunt}],
+        </c:forEach>
+        ]);
+
+        var options = {
+          title: '판매 순위'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
 	<div align="center">
@@ -40,6 +62,7 @@
 						</c:forEach>
 					</c:if>
 				</table><br/>
+				<div id="piechart" style="width: 900px; height: 500px;"></div>
 				<button type="button" onclick="location.href = 'main.do'">홈으로</button>
 			</form>
 		</div>
