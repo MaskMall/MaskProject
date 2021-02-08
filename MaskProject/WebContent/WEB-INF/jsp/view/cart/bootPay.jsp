@@ -32,10 +32,13 @@
 			console.log(data);
 		}).done(function(data) {
 			//결제가 정상적으로 완료되면 수행됩니다
-			//비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+			frm.submit();
+			alert('결제가 정상적으로 완료되었습니다.');
 			console.log(data);
 		});
 	</script>
-
+	<form action="sellInsert.do" name="frm" id="frm">
+		<input type="hidden" name="sellNumber" id="sellNumber" value="${vo.productNum}">
+	</form>
 </body>
 </html>

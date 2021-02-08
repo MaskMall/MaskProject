@@ -41,12 +41,11 @@ public class SellDao extends DAO {
 
 	public int insert(SellVo vo) { // 구매한 상품 정보 입력
 		int n = 0;
-		String sql = "INSERT INTO sell values(?, ?, sysdate, ?)";
+		String sql = "INSERT INTO SELL VALUES(SEQSELL.NEXTVAL, ?, SYSDATE, ?);";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getSellNumber());
-			psmt.setInt(2, vo.getSellProductNumber());
-			psmt.setString(3, vo.getSellUser());
+			psmt.setInt(1, vo.getSellProductNumber());
+			psmt.setString(2, vo.getSellUser());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
