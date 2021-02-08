@@ -60,21 +60,6 @@ public class FrontController4 extends HttpServlet {
 		map.put("/join.do", new Join()); 	//회원가입
 		map.put("/loginForm.do", new LoginForm());	//로그인 폼 호출
 		map.put("/login.do", new Login()); 	//로그인
-		map.put("/adminForm.do", new AdminFrom()); //관리자의 관리자창 폼 호출
-		map.put("/adminUserForm.do", new AdminUserForm()); //관리자의 회원목록 폼 호출
-		map.put("/userUpForm.do", new UserUpForm()); //관리자의 회원 수정 폼 호출
-		map.put("/userUpdate.do", new UserUpdate()); //관리자의 회원 수정
-		map.put("/userDelete.do", new UserDelete()); //관리자의 회원 삭제 
-		map.put("/adminSellerForm.do", new AdminSellerForm()); //관리자의 거래처목록 폼 호출
-		map.put("/sellerUpForm.do", new SellerUpForm()); //관리자의 거래처 수정 폼 호출
-		map.put("/sellerUpdate.do", new SellerUpdate()); //관리자의 거래처 수정
-		map.put("/sellerDelete.do", new SellerDelete()); //관리자의 거래처 삭제
-		map.put("/myPageForm.do", new MyPageForm()); //멤버(회원,거래처)의 내정보 조회
-		map.put("/myPageUpdateForm.do", new MyPageUpdateForm());//멤버의 내정보 수정 폼 호출
-		map.put("/myPageUpdate.do", new MyPageUpdate());//멤버의 내정보 수정
-		map.put("/myPageDelete.do", new MyPageDelete());//멤버의 회원탈퇴
-		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
-		map.put("/bootPay.do", new BootPay());
 		map.put("/myPageUpdateForm.do", new MyPageUpdateForm());//멤버의 내정보 수정 폼 호출
 		map.put("/myPageUpdate.do", new MyPageUpdate());//멤버의 내정보 수정
 		map.put("/showProduct.do", new ShowProduct()); //상품목록 조회

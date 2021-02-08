@@ -128,8 +128,18 @@ public class ProductDao extends DAO{
 	//관리자 상품 삭제
 	public int deleteAdmin(ProductVo vo) {
 		int n=0;
-		String sql="";
+		String sql="DELETE FROM PRODUCT WHERE PRODUCTNUM=?";
 		
+		try {
+			psmt=conn.prepareStatement(sql);
+			psmt.setInt(1, vo.getProductNum());
+			
+			n=psmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
 		return n;
 		
 		

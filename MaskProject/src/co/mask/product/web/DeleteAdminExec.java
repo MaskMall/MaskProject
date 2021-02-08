@@ -18,19 +18,13 @@ public class DeleteAdminExec implements Command {
 		ProductVo vo = new ProductVo();
 		MemberVo Mvo = new MemberVo();
 		HttpSession session = request.getSession();
-		String admin1="";
-		try {
-			admin1=((String) session.getAttribute("memberAuth"));
-			if(admin1==null || !admin1.equals("ADMIN")) {
-				request.setAttribute("msg", "삭제 권한이 없습니다.");
-				System.out.println("멤버권한 세션값:" + admin1);
-			}else {
-				int n= dao.deleteAdmin(vo);
-				
-			}
-		}finally {
-			
-		}
+		
+		String admin1=(String) session.getAttribute("memberAuth");
+		System.out.println(admin1);
+		
+		Mvo.setMemberAuth(admin1);
+		
+		int n=dao.deleteAdmin(vo);
 		
 		return "showProduct.do";
 	}
