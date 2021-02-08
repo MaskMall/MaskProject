@@ -1,108 +1,81 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
-<head>
+<head> 
 <meta charset="UTF-8">
-<title>문의 게시판</title>
-<style>
-table {
-	width: 70%;
-}
+<title>전체 게시글</title>
 
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
+<!-- jsp -->
+<jsp:include page="../main/menu.jsp" />
 
-td {
-	padding: 15px;
-	text-align: left;
-}
 
-th {
-	padding: 15px;
-	text-align: center;
-}
-
-#t01 tr:nth-child(even) {
-	background-color: #eee;
-}
-
-#t01 tr:nth-child(odd) {
-	background-color: #fff;
-}
-
-#t01 th {
-	background-color: black;
-	color: white;
-}
-
-.insertBtn {
-	border: none;
-	font-size: 16px;
-	cursor: pointer;
-	color: black;
-	justify-content: center;
-	display: flex;
-}
-
-.updateBtn {
-	border: none;
-	font-size: 16px;
-	cursor: pointer;
-	color: black;
-	justify-content: center;
-	display: flex;
-}
-</style>
+ <style type="text/css">
+ 	#wrap {
+ 		width: 800px;
+ 		margin: 0 auto 0 auto;
+ 	}
+ 	#topForm{
+ 		text-align: right;
+ 	}
+ 	#board, #pageForm, #searchForm{
+ 		text-align: center;
+ 	}
+ 	
+ 	#bList{
+ 		text-align: center;
+ 	}	
+ </style>
+ 
+  
 </head>
 <body>
-
-	<jsp:include page="../main/menu.jsp" />
-	<div class="container">
-		<div align="center">
-			<div>
-				<h2>문의 게시판</h2>
-			</div>
-			<table border="1" id="t01">
-				<tr>
-					<th width="100">게시글 번호</th>
-					<th width="100">글쓴이</th>
-					<th width="70">제목</th>
-					<th width="70">내용</th>
-					<th width="70">날짜</th>
+	<div id="wrap">
+		<br>
+		<div id="topForm">
+		</div>
+		<br>
+		<form id="frm" name="frm" method="post">
+		<div id="board">
+			<table id="bList" width="800" border="3">
+				<tr height="30">
+					<th>글번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>조회수</th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
-
-					<tr>
-
-						<td width="70">${vo.boardNumber}</td>
-						<td width="70">${vo.boardWriter}</td>
-						<td width="70">${vo.boardTitle}</td>
-						<td width="70">${vo.boardContent}</td>
-						<td width="70">${vo.boardDate}</td>
-					</tr>
+				<tr class="row" onclick="location.href='boardView.do?row='+${vo.boardNumber }">
+				<td align="center">${vo.boardNumber }</td>
+				<td align="center">${vo.boardTitle }</td>
+				<td align="center">${vo.boardWriter }</td>
+				<td align="center">${vo.boardDate }</td>
+				<td align="center">${vo.boardHit }</td>
+				</tr>
 				</c:forEach>
 			</table>
 		</div>
+		</form>
 		<br>
-	<!-- <div id="pageForm">페이지번호</div>  -->	
+		<div id="pageForm">
+			페이지번호
+		</div>
 		<br>
-		<div align="center"  id="searchForm">
+		<div id="searchForm">
 			<form>
 				<select name="opt">
 					<option value="0">제목</option>
 					<option value="1">내용</option>
 					<option value="2">제목+내용</option>
 					<option value="3">글쓴이</option>
-				</select> <input type="text" size="20" name="condition" />&nbsp; <input
-					type="submit" value="검색" />&nbsp;&nbsp;
-				<button type="button" title="글쓰기"
-					onclick="location.href='boardWirteForm.do'">글쓰기</button>
+				</select>
+				<input type="text" size="20" name="condition" />&nbsp;
+				<input type="submit" value="검색"/>&nbsp;&nbsp;
+				<button type="button" title="글쓰기" onclick="location.href='boardWirteForm.do'">글쓰기</button>
+				
 			</form>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>
