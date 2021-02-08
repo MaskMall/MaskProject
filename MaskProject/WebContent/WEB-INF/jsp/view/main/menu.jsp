@@ -85,7 +85,7 @@ html, body {
           </li>
 
            <c:if test="${memberId eq null}">
-
+			</c:if>
           <li class="nav-item active">
             <a class="nav-link" href="joinForm.do">회원가입</a>
           </li>
