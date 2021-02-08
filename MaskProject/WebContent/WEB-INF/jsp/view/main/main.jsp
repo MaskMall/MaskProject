@@ -35,6 +35,7 @@
 			<!-- Call to Action Well -->
 			<div class="card-body">
 				<p class="text-white m-0">코로나 바이러스를 효과적으료 예방할수있는 마스크 저희와 함께 하세요.
+
 				
 			</div>
 		</div>
@@ -93,7 +94,7 @@
 	</div>
 
 
-	<!-- Bootstrap core JavaScript -->
+	<!-- Bootstrap core JavaScript ! -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

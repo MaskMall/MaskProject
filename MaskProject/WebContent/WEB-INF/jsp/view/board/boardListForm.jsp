@@ -48,7 +48,7 @@
 		<br>
 		<form id="frm" name="frm" method="post">
 			<div id="board">
-				<table id="bList" width="800" border="3">
+				<table id="bList" width="800" border="1">
 					<tr height="30">
 						<th>글번호</th>
 						<th>제목</th>

@@ -17,7 +17,7 @@ public class Notice implements Command {
 		ArrayList<BoardVo> list = new ArrayList<BoardVo>();
 
 		list = dao.selectList();
-		request.setAttribute("list", list);
+		request.setAttribute("list", list); // 확인하기
 
 		return "view/board/notice";
 	}
