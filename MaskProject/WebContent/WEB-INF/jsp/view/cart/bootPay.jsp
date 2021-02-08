@@ -39,6 +39,7 @@
 	</script>
 	<form action="sellInsert.do" name="frm" id="frm">
 		<input type="hidden" name="productNum" id="productNum" value="${vo.productNum}">
+		<input type="hidden" name="sellQunt" id="sellQunt" value="${vo.cartSelect}">
 	</form>
 </body>
 </html>

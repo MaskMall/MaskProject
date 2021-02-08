@@ -18,7 +18,8 @@ public class SellInsert implements Command {
 		HttpSession session = request.getSession();
 		
 		vo.setSellProductNumber(Integer.parseInt(request.getParameter("productNum")));
-		vo.setMemberId((String) session.getAttribute("memberId"));
+		vo.setSellUser((String) session.getAttribute("memberId"));
+		vo.setSellQunt(Integer.parseInt(request.getParameter("sellQunt")));
 		
 		dao.insert(vo);
 		
