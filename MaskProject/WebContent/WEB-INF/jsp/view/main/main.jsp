@@ -98,15 +98,15 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<div class="jumbotron text-center" style="margin-bottom: 0">
+	<div class="jumbotron text-center" style="margin-bottom:0">
 		<p>
 			COMPANY : 주식회사 YD / OWNER : 김예담<br> 📞CALL CENTER : 053-421-2460<br>
 		</p>
 		<p>대구광역시 중구 상서동 22-2 BANK ACCOUNT 💳예담은행 100-010100-01-011 예금주 :
 			주식회사 예담</p>
 		<a href="#" target="_black" title="인스타그램으로 이동"><img
-			src="img/in.png"></a> <a href="#" target="_blank" title="페이스북으로 이동"><img
-			src="img/facebook.png"></a> <a href="#" target="_blank"><img
+			src="img/insta.jpg"></a> <a href="#" target="_blank" title="페이스북으로 이동"><img
+			src="img/fb.jpg"></a> <a href="#" target="_blank"><img
 			src="img/ka.jpg"></a>
 	</div>
 </body>

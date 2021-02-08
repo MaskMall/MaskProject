@@ -18,7 +18,6 @@ public class BoardListForm implements Command {
 		
 		list = dao.selectList();
 		request.setAttribute("list", list);
-//		String opt = (String)listOpt.get("opt");
 		
 		return "view/board/boardListForm";
 	}
