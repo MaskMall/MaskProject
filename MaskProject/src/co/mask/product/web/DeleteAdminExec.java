@@ -17,25 +17,13 @@ public class DeleteAdminExec implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// DeleteAdminExec.do 처리 메소드
-		ProductDao dao = new ProductDao();
-		ProductVo vo = new ProductVo();
+		CartDao dao = new CartDao();
+		CartVo vo = new CartVo();
+		vo.setCartProduct(Integer.parseInt(request.getParameter("row")));
 		
-		HttpSession session = request.getSession();
-		Object cartview =  session.getAttribute("cartProduct");
-		String cview = (String)cartview;
-		
-		System.out.println(cview);
-		
-		if(cartview != null) {
-			request.setAttribute("msg", "해당상품은 출고상품으로 삭제 불가능합니다.");
-		}else {
-			vo.setProductNum(Integer.parseInt(request.getParameter("row")));
-			int n=dao.deleteAdmin(vo);
-			System.out.println(n);
-			request.setAttribute("vo", vo);
-		}
+		int n=dao.deleteAdmin(vo);
 		
 		return "showProduct.do";
 	}
-
 }
+

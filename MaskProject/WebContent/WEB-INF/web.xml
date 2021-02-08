@@ -6,7 +6,7 @@
 	<display-name>MaskProject</display-name>
 	<servlet>
 		<servlet-name>FrontController</servlet-name>
-		<servlet-class>co.mask.common.FrontController1</servlet-class>
+		<servlet-class>co.mask.common.FrontController4</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>FrontController</servlet-name>
