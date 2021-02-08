@@ -28,6 +28,7 @@ public class NonMemberCart implements Command {
 			
 			arr.add(vo);
 			
+			session.setMaxInactiveInterval(1*60*20);
 			session.setAttribute("NonMemberList", arr);
 		}
 
