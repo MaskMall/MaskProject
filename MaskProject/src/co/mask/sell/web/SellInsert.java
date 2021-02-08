@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.mask.common.Command;
+import co.mask.product.dao.ProductDao;
+import co.mask.product.vo.ProductVo;
 import co.mask.sell.dao.SellDao;
 import co.mask.sell.vo.SellVo;
 
@@ -22,6 +24,15 @@ public class SellInsert implements Command {
 		vo.setSellQunt(Integer.parseInt(request.getParameter("sellQunt")));
 		
 		dao.insert(vo);
+		
+		ProductDao pDao = new ProductDao();
+		ProductVo pVo = new ProductVo();
+		pVo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
+		pDao.select(pVo);
+		
+		pDao = new ProductDao();
+		pVo.setProductQunt(pVo.getProductQunt() - Integer.parseInt(request.getParameter("sellQunt")));
+//		pDao.productUpDown(pVo);
 		
 		return "sellView.do";
 	}

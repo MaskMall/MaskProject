@@ -51,19 +51,6 @@ html, body {
 
 <body>
 
-	<!-- Navigation (fixed top은 상단 고정)-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container">
-			<!-- 특별히 부각 -->
-			<a class="navbar-brand" href="main.do">Our Mask</a>
-			<!-- 석삼 메뉴 클릭하면 세로방향의 메뉴가 내려옴. -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-<<<<<<< HEAD
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -84,19 +71,8 @@ html, body {
             <a class="nav-link" href="loginForm.do">로그인</a>
           </li>
 
-           <c:if test="${memberId eq null}"></c:if>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="joinForm.do">회원가입</a>
-          </li>
-
-          
-    
-=======
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
->>>>>>> branch 'master' of https://github.com/MaskMall/MaskProject.git
-
+           <c:if test="${memberId eq null}">
+			</c:if>
 
 					<li class="nav-item active"><a class="nav-link"
 						href="showProduct.do">마스크 구매하기 <span class="sr-only">(current)</span>
@@ -138,7 +114,7 @@ html, body {
 					
 					<c:if test="${memberAuth == 'SELLER'}">
 						<li class="nav-item active"><a class="nav-link"
-							href="sellView.do">판매내역</a></li>
+							href="sellerView.do">판매내역</a></li>
 						<li class="nav-item active"><a class="nav-link"
 							href="showProductSeller.do">상품관리</a></li>
 					</c:if>
