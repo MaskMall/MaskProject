@@ -69,7 +69,6 @@ th {
 			<table border="1" id="t01">
 				<tr>
 					<th width="100">게시글 번호</th>
-					<th width="100">글쓴이</th>
 					<th width="70">제목</th>
 					<th width="70">내용</th>
 					<th width="70">날짜</th>
@@ -79,7 +78,6 @@ th {
 					<tr>
 
 						<td width="70">${vo.boardNumber}</td>
-						<td width="70">${vo.boardWriter}</td>
 						<td width="70">${vo.boardTitle}</td>
 						<td width="70">${vo.boardContent}</td>
 						<td width="70">${vo.boardDate}</td>
