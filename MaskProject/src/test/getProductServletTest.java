@@ -46,6 +46,7 @@ public class getProductServletTest extends HttpServlet {
 					json += ",\"productPrice\":\""+ prd.getProductPrice()+"\"";
 					json += ",\"productQunt\":\""+ prd.getProductQunt()+"\"";
 					json += ",\"productSeller\":\""+ prd.getProductSeller()+"\"";
+					json += ",\"image\":\""+ prd.getImage()+"\"";
 					
 					
 					json += "}";
