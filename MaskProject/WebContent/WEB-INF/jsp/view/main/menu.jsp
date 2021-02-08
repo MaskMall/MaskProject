@@ -70,8 +70,16 @@ html, body {
 					<li class="nav-item active"><a class="nav-link"
 						href="showProduct.do">마스크 구매하기 <span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="cartView.do">장바구니</a></li>
+					<c:choose>
+						<c:when test="${memberId ne null}">
+							<li class="nav-item active"><a class="nav-link"
+								href="cartView.do">장바구니</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item active"><a class="nav-link"
+							href="nonMemberCart.do">장바구니</a></li>
+						</c:otherwise>
+					</c:choose>
 					<li class="nav-item active"><a class="nav-link"
 						href="boardListForm.do">문의페이지</a></li>
 					<li class="nav-item active"><a class="nav-link"
@@ -96,6 +104,14 @@ html, body {
 						<li class="nav-item active"><a class="nav-link"
 							href="showProductSeller.do">상품관리</a></li>
 					</c:if>
+					
+					<c:if test="${memberAuth == 'SELLER'}">
+						<li class="nav-item active"><a class="nav-link"
+							href="sellView.do">판매내역</a></li>
+						<li class="nav-item active"><a class="nav-link"
+							href="showProductSeller.do">상품관리</a></li>
+					</c:if>
+					
 					<c:if test="${memberId ne null }">
 						<li class="nav-item active"><a class="nav-link"
 							href="logout.do">Logout</a></li>
