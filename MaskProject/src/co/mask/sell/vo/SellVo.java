@@ -7,12 +7,22 @@ public class SellVo {
 	private int sellNumber;
 	private Date sellDate;
 	private String sellUser;
+	private int sellQunt;
 	private String memberId;
 	private int productNum;
 	private String productName;
 	private int productQunt;
 	private int productPrice;
 	private String ProductSeller;
+	
+	
+	public int getSellQunt() {
+		return sellQunt;
+	}
+
+	public void setSellQunt(int sellQunt) {
+		this.sellQunt = sellQunt;
+	}
 
 	public String getSellUser() {
 		return sellUser;

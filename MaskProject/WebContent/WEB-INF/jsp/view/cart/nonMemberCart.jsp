@@ -18,6 +18,7 @@
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
+		var win = window.open("", "PopupWin", "width=450,height=800");
 		frm.productNum.value = str;
 		frm.action = "nonMemberBootPay.do";
 		frm.submit();
@@ -33,7 +34,7 @@
 	<div align="center">
 		<h1>비회원 장바구니</h1>
 		<div>
-			<form action="" id="frm" name="frm" method="post">
+			<form action="" id="frm" name="frm" method="post" target="PopupWin">
 			<input type="hidden" name="productNum" id="productNum">
 				<table border="1">
 					<tr>
@@ -65,7 +66,8 @@
 							</tr>
 						</c:forEach>
 					</c:if>
-				</table>
+				</table><br/>
+				<button type="button" onclick="location.href = 'main.do'">홈으로</button>
 			</form>
 		</div>
 	</div>

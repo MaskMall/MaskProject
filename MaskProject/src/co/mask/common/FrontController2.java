@@ -30,7 +30,8 @@ import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
 import co.mask.sell.web.SellInsert;
-import co.mask.sell.web.SellView;
+import co.mask.sell.web.BuyerView;
+import co.mask.sell.web.SellerView;
 
 
 @WebServlet("/FrontController2")
@@ -60,8 +61,9 @@ public class FrontController2 extends HttpServlet {
 		map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 비회원 결제
 		map.put("/nonMemberCart.do", new NonMemberCart()); // 비회원 장바구니
 		//Sell
-		map.put("/sellView.do", new SellView()); // 판매 내역 리스트
+		map.put("/buyerView.do", new BuyerView()); // 판매 내역 리스트 (구매자)
 		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
+		map.put("/sellerView.do", new SellerView()); // 판매 내역 리스트 (판매자) 
 		//Product
 		map.put("/showProduct.do", new ShowProduct()); //상품목록 조회
 		map.put("/toInsertProduct.do", new ToInsertProduct()); //상품등록 화면 가기

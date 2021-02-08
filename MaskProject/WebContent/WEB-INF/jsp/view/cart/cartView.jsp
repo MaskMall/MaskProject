@@ -18,14 +18,19 @@
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
+		var win = window.open("", "PopupWin", "width=450,height=800");
+		frm.target = "PopupWin";
 		frm.cartProduct.value = str;
 		frm.action = "bootPay.do";
 		frm.submit();
 	}
 	function DeleteProduct(str) {
-		frm.cartNumber.value = str;
-		frm.action = "cartDelete.do";
-		frm.submit();
+		var yn = confirm("삭제하시겠습니까?")
+		if(yn) {
+			frm.cartNumber.value = str;
+			frm.action = "cartDelete.do";
+			frm.submit();
+		}
 	}
 </script>
 </head>
@@ -71,7 +76,8 @@
 							</tr>
 						</c:forEach>
 					</c:if>
-				</table>
+				</table><br/>
+				<button type="button" onclick="location.href = 'main.do'">홈으로</button>
 			</form>
 		</div>
 	</div>
