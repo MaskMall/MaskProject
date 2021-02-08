@@ -57,8 +57,8 @@ public class FrontController2 extends HttpServlet {
 		map.put("/cartView.do", new CartView()); // 장바구니 리스트 페이지
 		map.put("/bootPay.do", new BootPay()); // bootPay 결제
 		map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
-		map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 장바구니 삭제
-		map.put("/nonMemberCart.do", new NonMemberCart()); // 장바구니 삭제
+		map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 비회원 결제
+		map.put("/nonMemberCart.do", new NonMemberCart()); // 비회원 장바구니
 		//Sell
 		map.put("/sellView.do", new SellView()); // 판매 내역 리스트
 		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력

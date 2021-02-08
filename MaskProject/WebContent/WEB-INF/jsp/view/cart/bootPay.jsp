@@ -38,7 +38,7 @@
 		});
 	</script>
 	<form action="sellInsert.do" name="frm" id="frm">
-		<input type="hidden" name="sellNumber" id="sellNumber" value="${vo.productNum}">
+		<input type="hidden" name="productNum" id="productNum" value="${vo.productNum}">
 	</form>
 </body>
 </html>

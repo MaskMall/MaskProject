@@ -50,7 +50,7 @@
 					</tr>
 					<c:if test="${empty cartList }">
 						<tr align="center">
-							<th>장바구니에 등록된 상품이 없습니다.</th>
+							<th colspan="9">장바구니에 등록된 상품이 없습니다.</th>
 						</tr>
 					</c:if>
 					<c:if test="${not empty cartList }">
