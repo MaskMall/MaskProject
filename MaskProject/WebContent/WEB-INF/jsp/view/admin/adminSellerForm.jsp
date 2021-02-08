@@ -43,7 +43,7 @@
 					<th width="100">삭제</th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
-					<tr class="row">
+					<tr>
 						<td align="center">${vo.memberId }</td>
 						<td align="center">${vo.memberName }</td>
 						<td align="center">${vo.memberPhone }</td>
