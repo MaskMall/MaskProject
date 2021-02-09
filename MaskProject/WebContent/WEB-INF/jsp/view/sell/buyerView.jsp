@@ -6,9 +6,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+table {
+  width:70%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+.insertBtn {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+.updateBtn{
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+</style>
 </head>
 <body>
+<jsp:include page="../main/menu.jsp"></jsp:include>
 	<div align="center">
 		<h1>구매 내역 페이지</h1>
 		<div>
