@@ -57,8 +57,6 @@ public class ProductDao extends DAO{
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
-		}finally {
-			close();
 		}
 		return vo;
 	}

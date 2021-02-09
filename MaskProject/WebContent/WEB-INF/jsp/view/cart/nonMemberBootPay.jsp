@@ -11,7 +11,7 @@
 	<script>
 		//실제 복사하여 사용시에는 모든 주석을 지운 후 사용하세요
 		BootPay.request({
-			price : '${vo.productPrice }', //실제 결제되는 가격
+			price : '${vo.productPrice * vo.amount}', //실제 결제되는 가격
 
 			// 관리자로그인 -> 결제설치 -> 인증키 및 보안 -> WEB Application ID
 			application_id : "601bb3475b2948002e51f972",
