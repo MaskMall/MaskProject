@@ -28,6 +28,7 @@ import co.mask.board.web.Notice;
 import co.mask.cart.web.BootPay;
 import co.mask.cart.web.CartDelete;
 import co.mask.cart.web.CartView;
+import co.mask.cart.web.InputCart;
 import co.mask.cart.web.NonMemberBootPay;
 import co.mask.cart.web.NonMemberCart;
 import co.mask.join.web.IdCheck;
@@ -50,6 +51,7 @@ import co.mask.product.web.ShowProductSeller;
 import co.mask.product.web.ToInsertProduct;
 import co.mask.product.web.ToUpdateProduct;
 import co.mask.product.web.UpdateExec;
+import co.mask.product.web.ViewProduct;
 import co.mask.sell.web.SellInsert;
 import co.mask.sell.web.BuyerView;
 import test.AdminUserFormTest;
@@ -107,6 +109,8 @@ public class FrontController5 extends HttpServlet {
 				map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
 				map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 장바구니 삭제
 				map.put("/nonMemberCart.do", new NonMemberCart()); // 장바구니 삭제
+				map.put("/inputCart.do", new InputCart()); //cart에 담기
+				
 				//Sell
 				map.put("/sellView.do", new BuyerView()); // 판매 내역 리스트
 				map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
@@ -161,6 +165,7 @@ public class FrontController5 extends HttpServlet {
 				map.put("/deleteExec.do", new DeleteExec()); //상품삭제
 				map.put("/showProductSeller.do", new ShowProductSeller()); //판매자용 상품관리 
 				map.put("/deleteAdminExec.do",new DeleteAdminExec()); //관리자용 상품삭제
+				map.put("/viewProduct.do", new ViewProduct()); //상세화면 가기
 		
 		//FrontController5
 		

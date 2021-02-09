@@ -21,6 +21,7 @@ public class NonMemberCart implements Command {
 		if (request.getParameter("productNum") != null) {
 			vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
 			dao.select(vo);
+			vo.setAmount(Integer.parseInt(request.getParameter("amount")));
 			
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ArrayList<ProductVo> arr = (ArrayList) session.getAttribute("arr");
@@ -28,7 +29,6 @@ public class NonMemberCart implements Command {
 			
 			arr.add(vo);
 			
-			session.setMaxInactiveInterval(1*60*20);
 			session.setAttribute("NonMemberList", arr);
 		}
 

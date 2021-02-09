@@ -16,6 +16,7 @@ public class NonMemberBootPay implements Command {
 		vo.setProductNum(Integer.parseInt(request.getParameter("productNum")));
 		
 		dao.select(vo);
+		vo.setAmount(Integer.parseInt(request.getParameter("amount")));
 		request.setAttribute("vo", vo);
 		
 		return "view/cart/nonMemberBootPay";

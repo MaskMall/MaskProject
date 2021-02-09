@@ -53,8 +53,16 @@ th {
 	 }else{
 		 alert("계속 쇼핑");
 	 }
-	 
-	 
+ }
+ 
+ function gotoNonCart(){
+	 var yn = confirm("상품을 장바구니에 넣으시겠습니까?");
+	 if(yn){
+		 frm1.action="nonMemberCart.do";
+		 frm1.submit();
+	 }else{
+		 alert("계속 쇼핑");
+	 }
  }
  
   function buyNow(str) {
@@ -99,6 +107,7 @@ th {
 												</c:forEach>
 											</select>&nbsp;개
 											<input type="button" value="장바구니에 담기" onclick="gotoCart()">
+											<input type="button" value="비회원" onclick="gotoNonCart()">
 											<input type="button" value="바로 구매" onclick="buyNow(${vo.productNum})">
 										</form>
 					</tr>

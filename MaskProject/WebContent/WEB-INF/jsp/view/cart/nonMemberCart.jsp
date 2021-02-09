@@ -98,9 +98,12 @@ th {
 								<td>${vo.productNum }</td>
 								<td>${vo.productName }</td>
 								<td>${vo.productPrice }</td>
-								<td>구매수량수정</td>
+								<td>${vo.amount }</td>
 								<td>${vo.productSeller }</td>
-								<td><button type="button" onclick="buyProduct(${vo.productNum})">구 매</button></td>
+								<td>
+									<button type="button" onclick="buyProduct(${vo.productNum})">구 매</button>
+									<input type="hidden" name="amount" id="amount" value="${vo.amount }">
+								</td>
 								<td>
 									<button type="button" onclick="DeleteProduct(${vo.productNum})">삭 제</button>
 								</td>
