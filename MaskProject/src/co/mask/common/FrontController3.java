@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.mask.board.web.BoardDelete;
 import co.mask.board.web.BoardListForm;
+import co.mask.board.web.BoardUpdate;
+import co.mask.board.web.BoardUpdateForm;
 import co.mask.board.web.BoardView;
 import co.mask.board.web.BoardWirte;
 import co.mask.board.web.BoardWriteForm;
@@ -45,7 +48,10 @@ public class FrontController3 extends HttpServlet {
 		map.put("/boardWriteForm.do", new BoardWriteForm());
 		map.put("/boardWirte.do", new BoardWirte());
 		
+		map.put("/boardDelete.do", new BoardDelete());
 		
+		map.put("/boardUpdate.do", new BoardUpdate());
+		map.put("/boardUpdateForm.do", new BoardUpdateForm());
 	}
 
 
@@ -61,6 +67,7 @@ public class FrontController3 extends HttpServlet {
 //		System.out.println(path);// 메인으로가면 main.do 문의로가면  /boardListForm.do
 		Command command = map.get(path); 
 //		System.out.println(command.execute(request, response));  // 가져오는값 view/main/main view/board/boardListForm
+		
 		String viewPage = command.execute(request, response);
 		
 		if(!viewPage.endsWith(".do")) viewPage = "/WEB-INF/jsp/" + viewPage + ".jsp";

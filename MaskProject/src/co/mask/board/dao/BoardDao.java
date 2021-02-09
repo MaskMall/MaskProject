@@ -53,8 +53,8 @@ public class BoardDao extends DAO {
 	public int boardInsert(BoardVo vo) {
 		int n = 0;
 		
-		String sql = "INSERT INTO BOARD(BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT)"
-				+ " VALUES(board_seq.nextval,?,?,?)";
+		String sql = "INSERT INTO BOARD " + "(BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT)"
+				+ "VALUES(board_seq.nextval,?,?,?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -73,7 +73,7 @@ public class BoardDao extends DAO {
 	public int deleteBoard(BoardVo vo) {
 		// 삭제 쿼리
 		int n = 0;
-		String sql = "DELETE FROM BOARD WHERE NUM=?";
+		String sql = "DELETE FROM BOARD WHERE BOARDNUMBER=?";
 		try {
 
 			psmt = conn.prepareStatement(sql);
@@ -153,6 +153,26 @@ public class BoardDao extends DAO {
 		}
 		
 		return vo;
+	}
+
+	public int boardUpdate(BoardVo vo) {
+		int n = 0;
+		String sql = "UPDATE BOARD SET BOARDTITLE=?, BOARDCONTENT=? WHERE BOARDNUMBER=?";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getBoardTitle());
+			psmt.setString(2, vo.getBoardContent());
+			psmt.setInt(3, vo.getBoardNumber());
+			n = psmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		
+		return n;
 	}
 
 }
