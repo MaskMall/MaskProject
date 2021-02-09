@@ -81,7 +81,7 @@
 				</select>
 				<input type="text" size="20" name="condition" />&nbsp;
 				<input type="submit" value="검색"/>&nbsp;&nbsp;
-				<button type="button" title="글쓰기" onclick="location.href='boardWirte.do'">글쓰기</button>
+				<button type="button" title="글쓰기" onclick="location.href='boardWriteForm.do'">글쓰기</button>
 				
 			</form>
 		</div>

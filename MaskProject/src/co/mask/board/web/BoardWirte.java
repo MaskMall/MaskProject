@@ -13,16 +13,16 @@ public class BoardWirte implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		BoardDao dao = new BoardDao();
 		BoardVo vo = new BoardVo();
-		System.out.println("boardnumber");
-//		vo.setBoardNumber(Integer.parseInt(request.getParameter("boardnumber")));
-		vo.setBoardTitle(request.getParameter("boardtitle"));
-		vo.setBoardWriter(request.getParameter("boardwriter"));
-		vo.setBoardContent(request.getParameter("boardcontent"));
-		vo.setBoardFile(request.getParameter("boardfile"));
 		
+		vo.setBoardTitle(request.getParameter("boardTitle"));
+		vo.setBoardWriter(request.getParameter("boardWriter"));
+		vo.setBoardContent(request.getParameter("boardContent"));
+//		vo.setBoardFile(request.getParameter("boardfile"));
+		 
 		dao.boardInsert(vo);
+//		request.setAttribute("vo", vo);
 		
-		return "view/board/boardWriteForm";
+		return "boardListForm.do";
 	}
 
 }

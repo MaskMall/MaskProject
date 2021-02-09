@@ -50,31 +50,26 @@ public class BoardDao extends DAO {
 		return list;
 	}
 
-	public boolean boardInsert(BoardVo vo) {
-		// 글쓰기
-		boolean result = false;
+	public int boardInsert(BoardVo vo) {
+		int n = 0;
+		
+		String sql = "INSERT INTO BOARD " + "(BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT)"
+				+ "VALUES(board_seq.nextval,?,?,?)";
 
 		try {
-			String sql = "INSERT INTO BOARD " + "( BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT, BOARDFILE)"
-					+ "VALUES(?,?,?,?,?)";
-
-			int n = vo.getBoardNumber();
-
-			psmt = conn.prepareStatement(sql.toString());
-			psmt.setInt(1, vo.getBoardNumber());
-			psmt.setString(2, vo.getBoardTitle());
-			psmt.setString(3, vo.getBoardWriter());
-			psmt.setString(4, vo.getBoardContent());
-			psmt.setString(5, vo.getBoardFile());
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getBoardTitle());
+			psmt.setString(2, vo.getBoardWriter());
+			psmt.setString(3, vo.getBoardContent());
 
 			n = psmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close();
+			close(); 
 		}
-		return result;
+		return n;
 	}
 
 	public int deleteBoard(BoardVo vo) {

@@ -20,27 +20,26 @@
 	<div id="wrap" align="center">
 		<h1>게시글 등록</h1>
 
-		<form action="boardWirte.do"  method="post" 
-			enctype="multipart/form-data">
+		<form action="boardWirte.do"  method="post">
 			<table width="600"  border="1">
 				<tr>
 					<th>작성자</th>
-					<td><input type="text" name="name"></td>
+					<td><input type="text" name="boardWriter"></td>
 				</tr>
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="boardTitle"  /></td>
+					<td><input type="text" name="boardTitle"></td>
 				</tr>
 				<tr>
 					<td id="title">내용</td>
-					<td><textarea name="#" rows="10" cols="40" ></textarea></td>
+					<td><textarea name="boardContent" rows="10" cols="40" ></textarea></td>
 				</tr>
 				<tr>
 					<td id="title">파일첨부</td>
 					<td><input type="file" name="boardFile" /></td>
 				</tr>
-
-				<tr align="center" valign="middle"> <td colspan="2">
+ 
+				<tr align="center" valign="middle">  <td colspan="2">
 					<input type="submit" value="등록"> 
 					<input type="reset" value="작성취소"> 
 					<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
