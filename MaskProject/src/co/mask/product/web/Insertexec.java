@@ -19,7 +19,7 @@ public class Insertexec implements Command {
 		vo.setProductQunt(Integer.parseInt(request.getParameter("productQunt")));
 		vo.setProductPrice(Integer.parseInt(request.getParameter("productPrice")));
 		vo.setProductSeller(request.getParameter("ProductSeller"));
-
+		System.out.println(request.getParameter("ProductSeller"));
 		int n = dao.insert(vo);
 		request.setAttribute("vo", vo);
 
