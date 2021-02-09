@@ -24,7 +24,7 @@ public class SellerView implements Command {
 		list = dao.selectListSeller(vo);
 		request.setAttribute("list", list);
 		
-		return "view/sell/sellerView";
+		return "chartList.do";
 	}
 
 }

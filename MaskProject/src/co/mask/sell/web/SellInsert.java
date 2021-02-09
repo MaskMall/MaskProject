@@ -32,9 +32,9 @@ public class SellInsert implements Command {
 		
 		pDao = new ProductDao();
 		pVo.setProductQunt(pVo.getProductQunt() - Integer.parseInt(request.getParameter("sellQunt")));
-//		pDao.productUpDown(pVo);
+		pDao.productUpDown(pVo);
 		
-		return "sellView.do";
+		return "chartInsert.do";
 	}
 
 }

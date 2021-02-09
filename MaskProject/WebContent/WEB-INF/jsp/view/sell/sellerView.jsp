@@ -15,8 +15,8 @@
 		
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Sell List'],
-        <c:forEach var="vo" items="${list }">
-       		['${vo.productName}', ${vo.sellQunt}],
+        <c:forEach var="ct" items="${chartList }">
+       		['${ct.chartProduct}', ${ct.chartProductQunt}],
         </c:forEach>
         ]);
 

@@ -32,6 +32,8 @@ import co.mask.product.web.UpdateExec;
 import co.mask.sell.web.SellInsert;
 import co.mask.sell.web.BuyerView;
 import co.mask.sell.web.SellerView;
+import co.mask.sellChart.web.ChartInsert;
+import co.mask.sellChart.web.ChartList;
 
 
 @WebServlet("/FrontController2")
@@ -63,7 +65,10 @@ public class FrontController2 extends HttpServlet {
 		//Sell
 		map.put("/buyerView.do", new BuyerView()); // 판매 내역 리스트 (구매자)
 		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
-		map.put("/sellerView.do", new SellerView()); // 판매 내역 리스트 (판매자) 
+		map.put("/sellerView.do", new SellerView()); // 판매 내역 리스트 (판매자)
+		//Chart
+		map.put("/chartInsert.do", new ChartInsert());
+		map.put("/chartList.do", new ChartList());
 		//Product
 		map.put("/showProduct.do", new ShowProduct()); //상품목록 조회
 		map.put("/toInsertProduct.do", new ToInsertProduct()); //상품등록 화면 가기
