@@ -46,17 +46,17 @@ th {
 			<table border="1" id="t01" class="row">
 				<tr >
 					<th width="150">상품 번호</th>
-				    <th width="150">상품 이름</th> 
+				    <th width="250">상품 이름</th> 
 				    <th width="150">상품 수량</th>
 				    <th width="150">상품 판매가격</th>
 				    <th width="150">판매자</th>
 				</tr>
 				<tr >
-					<td width="150"><input type="text" name="productNum" value="${vo.productNum}" readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
-					<td width="150"><input type="text" name="productName" value="${vo.productName}" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productNum" value="${vo.productNum}" readonly="readonly" size="20" style="width:100%; border:none; background: transparent;"></td>
+					<td width="250"><input type="text" name="productName" value="${vo.productName}" size="30" style="width:100%; border:0.5;"></td>
 					<td width="150"><input type="text" name="productQunt" value="${vo.productQunt}" size="20" style="width:100%; border:0.5;"></td>
 					<td width="150"><input type="text" name="productPrice" value="${vo.productPrice}" size="20" style="width:100%; border:0.5;" ></td>
-					<td width="150"><input type="text" name="productSeller" value="${vo.productSeller}"readonly="readonly" size="20" style="width:100%; border:0.5;"></td>
+					<td width="150"><input type="text" name="productSeller" value="${vo.productSeller}"readonly="readonly" size="20" style="width:100%; border:none; background: transparent;"></td>
 				</tr>
 			</table><br/>
 			<div>

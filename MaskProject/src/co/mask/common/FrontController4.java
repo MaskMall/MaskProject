@@ -11,37 +11,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.mask.cart.web.InputCart;
 import co.mask.join.web.IdCheck;
 import co.mask.join.web.Join;
 import co.mask.join.web.JoinForm;
 import co.mask.login.web.Login;
 import co.mask.login.web.LoginForm;
-import co.mask.admin.web.AdminFrom;
-import co.mask.admin.web.AdminSellerForm;
-import co.mask.admin.web.AdminUserForm;
-import co.mask.admin.web.SellerDelete;
-import co.mask.admin.web.SellerUpForm;
-import co.mask.admin.web.SellerUpdate;
-import co.mask.admin.web.UserDelete;
-import co.mask.admin.web.UserUpForm;
-import co.mask.admin.web.UserUpdate;
-import co.mask.cart.web.BootPay;
-import co.mask.cart.web.CartView;
 import co.mask.main.MainPage;
 import co.mask.main.Menu;
-import co.mask.member.web.MyPageDelete;
-import co.mask.member.web.MyPageForm;
 import co.mask.member.web.MyPageUpdate;
 import co.mask.member.web.MyPageUpdateForm;
-import co.mask.product.web.ToInsertProduct;
-import co.mask.product.web.ToUpdateProduct;
-import co.mask.product.web.UpdateExec;
 import co.mask.product.web.DeleteAdminExec;
 import co.mask.product.web.DeleteExec;
 import co.mask.product.web.Insertexec;
 import co.mask.product.web.ShowProduct;
 import co.mask.product.web.ShowProductSeller;
+import co.mask.product.web.ToInsertProduct;
+import co.mask.product.web.ToUpdateProduct;
+import co.mask.product.web.UpdateExec;
+import co.mask.product.web.ViewProduct;
 
 @WebServlet("/FrontController4")
 public class FrontController4 extends HttpServlet {
@@ -70,6 +58,8 @@ public class FrontController4 extends HttpServlet {
 		map.put("/deleteExec.do", new DeleteExec()); //상품삭제
 		map.put("/showProductSeller.do", new ShowProductSeller()); //판매자용 상품관리 
 		map.put("/deleteAdminExec.do",new DeleteAdminExec()); //관리자용 상품삭제
+		map.put("/viewProduct.do", new ViewProduct()); //상세화면 가기
+		map.put("/inputCart.do", new InputCart()); //cart에 담기
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

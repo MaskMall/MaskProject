@@ -7,19 +7,21 @@ import co.mask.board.dao.BoardDao;
 import co.mask.board.vo.BoardVo;
 import co.mask.common.Command;
 
-public class BoardWirte implements Command {
+public class BoardUpdate implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+
 		BoardDao dao = new BoardDao();
 		BoardVo vo = new BoardVo();
-		
+		//게시글 수정 
+		vo.setBoardNumber(Integer.parseInt(request.getParameter("row")));
 		vo.setBoardTitle(request.getParameter("boardTitle"));
-		vo.setBoardWriter(request.getParameter("boardWriter"));
 		vo.setBoardContent(request.getParameter("boardContent"));
-//		vo.setBoardFile(request.getParameter("boardfile"));
-		dao.boardInsert(vo);
-//		request.setAttribute("vo", vo);
+		
+		int n = dao.boardUpdate(vo);
+		
+		
 		return "boardListForm.do";
 	}
 

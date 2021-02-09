@@ -21,13 +21,13 @@ th {
   padding: 15px;
   text-align: center;
 }
-#t01 tr:nth-child(even) {
+.t01 tr:nth-child(even) {
   background-color: #eee;
 }
-#t01 tr:nth-child(odd) {
+.t01 tr:nth-child(odd) {
  background-color: #fff;
 }
-#t01 th {
+.t01 th {
   background-color: black;
   color: white;
 }
@@ -82,10 +82,10 @@ th {
 				    <th width="80">판매자</th>
 				</tr>
 				<tr>
-					<td width="80"><input type="text" id="productName" name="productName" size="20" style="width:100%; border:0.5;" ></td>
-					<td width="45"><input type="number" id="productQunt" name="productQunt" size="20" style="width:100%; border:0.5;" ></td>
-					<td width="50"><input type="number" id="productPrice" name="productPrice" size="20" style="width:100%; border:0.5;"></td>
-					<td width="80"><input type="text" id="ProductSeller" name="ProductSeller" size="20" style="width:100%; border:0.5;"></td>
+					<td width="80"><input type="text" id="productName" name="productName" style="width:100%; height:80%; border:0.5;" ></td>
+					<td width="45"><input type="number" id="productQunt" name="productQunt" style="width:100%; border:0.5;" ></td>
+					<td width="50"><input type="number" id="productPrice" name="productPrice" style="width:100%; border:0.5;"></td>
+					<td width="80"><input type="text" id="ProductSeller" name="ProductSeller" style="width:100%;"></td>
 				</tr>	
 			</table><br/>
 			<div>

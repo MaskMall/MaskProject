@@ -12,9 +12,50 @@
 
 
 <style type="text/css">
-	input{
-		border: none;
-	}
+input{
+ border: none;
+}
+table {
+  width:70%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+.insertBtn {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+.updateBtn{
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
@@ -57,9 +98,12 @@
 								<td>${vo.productNum }</td>
 								<td>${vo.productName }</td>
 								<td>${vo.productPrice }</td>
-								<td>구매수량수정</td>
+								<td>${vo.amount }</td>
 								<td>${vo.productSeller }</td>
-								<td><button type="button" onclick="buyProduct(${vo.productNum})">구 매</button></td>
+								<td>
+									<button type="button" onclick="buyProduct(${vo.productNum})">구 매</button>
+									<input type="hidden" name="amount" id="amount" value="${vo.amount }">
+								</td>
 								<td>
 									<button type="button" onclick="DeleteProduct(${vo.productNum})">삭 제</button>
 								</td>

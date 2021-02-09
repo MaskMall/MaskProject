@@ -5,12 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>문의글 내용 보기</title>
+<script type="text/javascript">
+function deleteBoard(str){
+	var yn = confirm("정말 삭제합니까");
+	if(yn){
+		frm.action="boardDelete.do?row="+str;
+		frm.submit();
+	}
+}
+function updateBoard(str){
+	frm.action = "boardUpdateForm.do?row="+str;
+	frm.submit();
+}
+
+
+
+</script>
 </head>
 <body>
 	<div align="center">
 		<div>
 			<h1>문의글 내용보기</h1>
 		</div>
+		<form id="frm" name="frm" method="post">
 		<table border="1">
 			<tr>
 				<th>게시글번호</th>
@@ -29,8 +46,9 @@
 				<td align="center">${vo.boardHit }</td>
 			</tr>
 		</table>
-		<br><button type="button">수정</button>&nbsp;&nbsp;&nbsp; 
-		<button type="button">삭제</button>&nbsp;&nbsp;&nbsp; 
+		</form>
+		<br><button type="button" onclick="updateBoard('${vo.boardNumber}')">수정</button>&nbsp;&nbsp;&nbsp; 
+		<button type="submit" onclick="deleteBoard('${vo.boardNumber}')">삭제</button>&nbsp;&nbsp;&nbsp; 
 		<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
 	</div>
 

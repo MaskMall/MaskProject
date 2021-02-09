@@ -8,6 +8,15 @@ public class ProductVo {
 	private String ProductSeller;
 	private String memberId;
 	private String image;
+	private int amount;
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 
 	public int getProductNum() {
 		return productNum;

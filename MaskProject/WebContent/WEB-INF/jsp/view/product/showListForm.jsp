@@ -60,6 +60,10 @@ th {
 
 }
 
+#t01 tr#row:hover{
+	background-color: grey;
+}
+
 </style>
 <script>
 function adminDelete(str) {
@@ -73,14 +77,21 @@ function adminDelete(str) {
 	}
 }
 
+function formView(str1){
+	frm.productNum.value=str1;
+	frm.submit();
+}
 </script>
+
+
 </head>
 <body>
 
 <jsp:include page="../main/menu.jsp"></jsp:include>
   <div align="center">
   	<div><h2>상품 목록</h2></div>
-  	<form id="frm" name="frm" method="post">
+  	<form id="frm" name="frm" method="post" action="viewProduct.do">
+  		<input type="hidden" id="productNum" name="productNum">
 	<table border="1" id="t01">
 		  <tr>
 		    <th width="70" >상품 번호</th>
@@ -94,7 +105,7 @@ function adminDelete(str) {
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 			  
-				 <tr>
+				 <tr id="row" onclick="formView(${vo.productNum})" style="cursor:pointer;">
 
 				    <td width="70">${vo.productNum}</td>
 				    <td width="70">${vo.productName}</td>

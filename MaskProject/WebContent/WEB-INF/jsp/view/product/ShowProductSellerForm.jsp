@@ -35,23 +35,6 @@ th {
   color: white;
 }
 
-.updateBtn{
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: black;
-  justify-content: center;
-  display: flex;
-
-}
-.deleteBtn{
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: black;
-  justify-content: center;
-  display: flex;
-}
 
 </style>
 <script>
@@ -59,9 +42,9 @@ function updateproduct(str4,str5,str6) {
 	 var msg = confirm("정말 수정하시겠습니까?");
 	 if(msg){
 		 if(str6 != str5){
-			 elert("수정권한이 없습니다.");
+			 alert("수정권한이 없습니다.");
 		 }else{
-			 frm.action="toUpdateProduct.do?row="+str;
+			 frm.action="toUpdateProduct.do?row="+str4;
 			 frm.submit();	 
 		 }
 		 
@@ -99,15 +82,17 @@ function PdDelete(str,str2,str3){
   	<div><h2>상품 목록</h2></div>
   	<form id="frm" name="frm" method="post">
 	<table border="1" id="t01">
-	<%-- <c:if test= "${MemberVo.memberId eq ${vo.memberId}}"> --%>
+
 		  <tr>
 		    <th width="70" >상품 번호</th>
 		    <th width="100">상품 이름</th> 
 		    <th width="70">상품 수량</th>
 		    <th width="70">상품 판매가격</th>
 		    <th width="70">해당 판매자</th>
+		    <c:if test="${memberAuth eq 'SELLER'}">
 		    <th width="70">상품 수정</th>
 		    <th width="70">상품 삭제</th>
+		    </c:if>
 		  </tr>
 			  <c:forEach var="vo" items="${list }">
 				 <tr >
@@ -115,16 +100,17 @@ function PdDelete(str,str2,str3){
 				    <td width="70">${vo.productNum}</td>
 				    <td width="70">${vo.productName}</td>
 				    <td width="70">${vo.productQunt}</td>
-				    <td width="70">${vo.productPrice}</td>
+				    <td width="100">${vo.productPrice}</td>
 				    <td width="70">${vo.productSeller}</td>
+				    <c:if test="${memberAuth eq 'SELLER'}">
 			        <td>
 						<button type="button" onclick = "updateproduct('${vo.productNum}','${vo.productSeller }','${memberId }')" >수  정</button></td>
 			  	 	<td>
-						<button type="button" onclick="PdDelete(${vo.productNum},'${vo.productSeller }','${memberId }')" >삭  제</button>
-			  	 		
+						<button type="button" onclick="PdDelete(${vo.productNum},'${vo.productSeller }','${memberId }')" >삭  제</button></td>
+			  	 	 </c:if>
 		  	  </tr>
 		  	  </c:forEach>
-		  	  <%-- </c:if> --%>
+
 		  	  
 	</table>
 	<br/>
@@ -134,7 +120,7 @@ function PdDelete(str,str2,str3){
 			<div align="center">
 		  	  <button type="button" onclick="location.href = 'main.do'">홈으로</button>&nbsp;&nbsp;
 		  	  <button type="button" onclick="location.href = 'showProduct.do'">상품목록 가기</button>&nbsp;&nbsp;
-			  <button type="button" onclick="location.href ='toInsertProduct.do'" >등  록</button>
+			  <button type="button" onclick="location.href ='toInsertProduct.do'" >상품 등록</button>
 		    </div>  
 		    
 </body>

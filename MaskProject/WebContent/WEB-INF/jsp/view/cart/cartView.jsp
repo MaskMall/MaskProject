@@ -9,12 +9,51 @@
 
 <!-- jsp -->
 <jsp:include page="../main/menu.jsp"></jsp:include>
-
-
 <style type="text/css">
-	input{
-		border: none;
-	}
+input{
+ border: none;
+}
+table {
+  width:70%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  padding: 15px;
+  text-align: center;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+.insertBtn {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+.updateBtn{
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
 </style>
 <script type="text/javascript">
 	function buyProduct(str) {
