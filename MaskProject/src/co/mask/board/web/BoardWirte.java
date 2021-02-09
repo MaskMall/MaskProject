@@ -18,10 +18,8 @@ public class BoardWirte implements Command {
 		vo.setBoardWriter(request.getParameter("boardWriter"));
 		vo.setBoardContent(request.getParameter("boardContent"));
 //		vo.setBoardFile(request.getParameter("boardfile"));
-		 
 		dao.boardInsert(vo);
 //		request.setAttribute("vo", vo);
-		
 		return "boardListForm.do";
 	}
 

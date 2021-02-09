@@ -60,7 +60,7 @@ public class FrontController3 extends HttpServlet {
 //		System.out.println(map.get(path)); null을 가져온다
 //		System.out.println(path);// 메인으로가면 main.do 문의로가면  /boardListForm.do
 		Command command = map.get(path); 
-		System.out.println(command.execute(request, response));  // 가져오는값 view/main/main view/board/boardListForm
+//		System.out.println(command.execute(request, response));  // 가져오는값 view/main/main view/board/boardListForm
 		String viewPage = command.execute(request, response);
 		
 		if(!viewPage.endsWith(".do")) viewPage = "/WEB-INF/jsp/" + viewPage + ".jsp";

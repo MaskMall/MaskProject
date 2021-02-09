@@ -67,6 +67,12 @@ public class BoardVo {
 	public void setBoardHit(int boardHit) {
 		this.boardHit = boardHit;
 	}
+	@Override
+	public String toString() {
+		return "BoardVo [boardNumber=" + boardNumber + ", boardTitle=" + boardTitle + ", boardWriter=" + boardWriter
+				+ ", boardContent=" + boardContent + ", boardFile=" + boardFile + ", boardDate=" + boardDate
+				+ ", boardLock=" + boardLock + ", boardValue=" + boardValue + ", boardHit=" + boardHit + "]";
+	}
 	
 	
 	

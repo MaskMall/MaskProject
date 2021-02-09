@@ -28,7 +28,7 @@
  	margin: 4px 0;
  	padding: 10px 0;
  	width: 840px;
- 	background-color: rgb(255,80,80);
+ 	background-color: black;
  	color:white;
  	border: none;
  	}
@@ -50,16 +50,16 @@
 			<table>
 				<tr>
 					<th>글번호</th>
-					<th>제목</th>
 					<th>작성자</th>
+					<th>제목</th>
 					<th>작성일</th>
 					<th>조회수</th>
 				</tr>
 				<c:forEach var="vo" items="${list }">
 				<tr class="row" onclick="location.href='boardView.do?row='+${vo.boardNumber }">
 				<td align="center">${vo.boardNumber }</td>
-				<td align="center">${vo.boardTitle }</td>
 				<td align="center">${vo.boardWriter }</td>
+				<td align="center">${vo.boardTitle }</td>
 				<td align="center">${vo.boardDate }</td>
 				<td align="center">${vo.boardHit }</td>
 				</tr>

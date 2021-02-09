@@ -13,6 +13,7 @@ public class BoardListForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
 		BoardDao dao = new BoardDao();
 		ArrayList<BoardVo> list = new ArrayList<BoardVo>();
 		

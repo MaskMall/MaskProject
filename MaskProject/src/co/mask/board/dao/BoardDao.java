@@ -53,17 +53,15 @@ public class BoardDao extends DAO {
 	public int boardInsert(BoardVo vo) {
 		int n = 0;
 		
-		String sql = "INSERT INTO BOARD " + "(BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT)"
-				+ "VALUES(board_seq.nextval,?,?,?)";
+		String sql = "INSERT INTO BOARD(BOARDNUMBER, BOARDWRITER, BOARDTITLE, BOARDCONTENT)"
+				+ " VALUES(board_seq.nextval,?,?,?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getBoardTitle());
 			psmt.setString(2, vo.getBoardWriter());
 			psmt.setString(3, vo.getBoardContent());
-
 			n = psmt.executeUpdate();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
