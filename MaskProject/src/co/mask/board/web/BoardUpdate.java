@@ -14,8 +14,9 @@ public class BoardUpdate implements Command {
 
 		BoardDao dao = new BoardDao();
 		BoardVo vo = new BoardVo();
-		//게시글 수정 
+		//寃���湲� ���� 
 		vo.setBoardNumber(Integer.parseInt(request.getParameter("row")));
+		vo.setBoardWriter(request.getParameter("boardWriter"));
 		vo.setBoardTitle(request.getParameter("boardTitle"));
 		vo.setBoardContent(request.getParameter("boardContent"));
 		

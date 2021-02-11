@@ -14,14 +14,13 @@
 	text-align: center;
 }
 </style>
-
+<jsp:include page="../main/menu.jsp" />
 </head>
 <body>
 	<div id="wrap" align="center">
-		<h1>게시글 등록</h1>
-
+		<h2>게시글 등록</h2>
 		<form action="boardWirte.do"  method="post">
-			<table width="600"  border="1">
+			<table  border="1">
 				<tr>
 					<th>작성자</th>
 					<td><input type="text" name="boardWriter"></td>

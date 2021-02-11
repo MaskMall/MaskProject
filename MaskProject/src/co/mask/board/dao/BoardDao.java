@@ -25,10 +25,12 @@ public class BoardDao extends DAO {
 		return instance;
 	}
 
-	public ArrayList<BoardVo> selectList() { // 조회
+	public ArrayList<BoardVo> selectList() { // 議고��
 		ArrayList<BoardVo> list = new ArrayList<BoardVo>();
 		BoardVo vo;
-		String sql = "SELECT * FROM BOARD ORDER BY 1 DESC";
+		String sql = //"SELECT BOARTITLE, BOARDCONTENT, BOARDWRITER,BOARDDATE FROM BOARD WHERE BOARDNUMBER="+IDX; 
+				"SELECT * FROM BOARD ORDER BY 1 DESC";
+					
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -71,7 +73,7 @@ public class BoardDao extends DAO {
 	}
 
 	public int deleteBoard(BoardVo vo) {
-		// 삭제 쿼리
+		// ���� 荑쇰━
 		int n = 0;
 		String sql = "DELETE FROM BOARD WHERE BOARDNUMBER=?";
 		try {
@@ -89,12 +91,12 @@ public class BoardDao extends DAO {
 	}
 
 	public void reWriteBoard(BoardVo vo) {
-		// 답글
+		// �듦�
 	}
 
 //	public ArrayList<BoardVo> getBoardList
 
-	public void close() { // close 메소드
+	public void close() { // close 硫�����
 		try {
 			if (rs != null)
 				rs.close();
@@ -113,7 +115,7 @@ public class BoardDao extends DAO {
 		try {
 			conn = DBConnection.getConnection();
 
-			// 시퀀스 값을 가져온다 (dual: 시퀀스값 가져오는 임시테이블)
+			// ������ 媛��� 媛��몄�⑤�� (dual: �����ㅺ� 媛��몄�ㅻ�� �������대�)
 			StringBuffer sql = new StringBuffer();
 			sql.append("SELECT BOARDNUMBER.NEXTVAL FROM DUAL");
 
@@ -133,15 +135,15 @@ public class BoardDao extends DAO {
 	}
 
 	public BoardVo select(BoardVo vo) {
-		String sql1 = "SELECT * FROM BOARD WHERE BOARDNUMBER=?";
+		String sql = "SELECT * FROM BOARD WHERE BOARDNUMBER=?";
 		try {
-			psmt = conn.prepareStatement(sql1);
+			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getBoardNumber());
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo.setBoardNumber(rs.getInt("boardnumber"));
-				vo.setBoardTitle(rs.getString("boardtitle"));
 				vo.setBoardWriter(rs.getString("boardwriter"));
+				vo.setBoardTitle(rs.getString("boardtitle"));
 				vo.setBoardContent(rs.getString("boardcontent"));
 				vo.setBoardDate(rs.getDate("boarddate"));
 				vo.setBoardHit(rs.getInt("boardhit"));

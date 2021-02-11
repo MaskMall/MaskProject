@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>전체 게시글</title>
 
-
-
  <style type="text/css">
  	.controller{
  		padding: 25px 0;
@@ -21,7 +19,7 @@
  	border-collapse: collapse;
  	}
  	th {
- 		background-color: rgb(100,100,100);
+ 		background-color: black;
  		color: white;
  	}
  	button {
@@ -39,24 +37,27 @@
  	a:hover{
  		text-decration-line: underline;
  	}
- 	
  </style>
- 
-  
 </head>
 <body>
+<jsp:include page="../main/menu.jsp" />
+<div align="center"><h1>문의 게시판</h1></div>
 	<div class="controller">
 		<form id="frm" name="frm" method="post">
-			<table>
-				<tr>
+			<table class="table table-hover">
+				<tr align="center">
 					<th>글번호</th>
 					<th>작성자</th>
 					<th>제목</th>
 					<th>작성일</th>
 					<th>조회수</th>
 				</tr>
+				<c:if test="${empty list }">
+					<tr><td colspan="5" align="center">문의 내역이 없습니다.</td></tr>
+				</c:if>	
+				<c:if test="${not empty list }">
 				<c:forEach var="vo" items="${list }">
-				<tr class="row" onclick="location.href='boardView.do?row='+${vo.boardNumber }">
+				<tr onclick="location.href='boardView.do?row='+${vo.boardNumber }">
 				<td align="center">${vo.boardNumber }</td>
 				<td align="center">${vo.boardWriter }</td>
 				<td align="center">${vo.boardTitle }</td>
@@ -64,6 +65,7 @@
 				<td align="center">${vo.boardHit }</td>
 				</tr>
 				</c:forEach>
+				</c:if>
 			</table>
 		</form>
 		<br>
@@ -71,7 +73,7 @@
 			페이지번호
 		</div>
 		<br>
-		<div id="searchForm">
+		<div>
 			<form>
 				<select name="opt">
 					<option value="0">제목</option>
@@ -80,7 +82,7 @@
 					<option value="3">글쓴이</option>
 				</select>
 				<input type="text" size="20" name="condition" />&nbsp;
-				<input type="submit" value="검색"/>&nbsp;&nbsp;
+				<input type="submit" value="검색"/>&nbsp;&nbsp;<br/>
 				<button type="button" title="글쓰기" onclick="location.href='boardWriteForm.do'">글쓰기</button>
 				
 			</form>

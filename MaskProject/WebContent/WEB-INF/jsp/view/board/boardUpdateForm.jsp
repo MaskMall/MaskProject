@@ -6,13 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<jsp:include page="../main/menu.jsp" />
 <body>
 <div align="center">
 <div>
-	<h1>${vo.boardNumber } 게시글 수정</h1>
+	<h1>${vo.boardNumber }번게시글 수정하기</h1>
 </div>
 	<form id="frm" name="frm" action="boardUpdate.do?row=${vo.boardNumber }" method="post">
-		<table border="1" class="row">
+		<table border="1"class="table table-hover" class="row">
 			<tr>
 				<th>글쓴이</th>
 				<td align="center">${vo.boardWriter }</td>
@@ -25,7 +26,8 @@
 				<th>내용</th>
 				<td align="center"><input type="text" name="boardTitle" value="${vo.boardContent }"></td>
 			</tr>
-		</table><br/>
+		</table>
+		<br/>
 		<button type="submit">수정</button>&nbsp;&nbsp;&nbsp;
 		<button type="reset">취소</button>&nbsp;&nbsp;
 		<button type="button" onclick="location.href='boardListForm.do'">목록</button>
