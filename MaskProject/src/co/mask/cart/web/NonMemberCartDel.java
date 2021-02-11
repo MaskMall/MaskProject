@@ -1,6 +1,7 @@
 package co.mask.cart.web;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +11,11 @@ import co.mask.common.Command;
 import co.mask.product.dao.ProductDao;
 import co.mask.product.vo.ProductVo;
 
-public class NonMemberCart implements Command {
+public class NonMemberCartDel implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		// 비회원 장바구니 삭제 기능
 		ProductDao dao = new ProductDao();
 		ProductVo vo = new ProductVo();
 		HttpSession session = request.getSession();
@@ -25,12 +27,17 @@ public class NonMemberCart implements Command {
 
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ArrayList<ProductVo> arr = (ArrayList) session.getAttribute("NonMemberList");
-			if (arr == null) arr = new ArrayList<ProductVo>();
 			
-			arr.add(vo);
-			
+			Iterator<ProductVo> iter = arr.iterator();
+			while (iter.hasNext()) {
+				ProductVo obj = iter.next();
+				if (obj.getProductNum() == Integer.parseInt(request.getParameter("productNum"))) {
+					iter.remove();
+				}
+			}
 			session.setAttribute("NonMemberList", arr);
 		}
 		return "view/cart/nonMemberCart";
 	}
+
 }

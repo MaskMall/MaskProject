@@ -65,7 +65,7 @@ public class ProductDao extends DAO{
 	//판매자 상품 등록
 	public int insert(ProductVo vo) {
 		int n=0;
-		String sql="INSERT INTO PRODUCT VALUES(SEQ_PRODUCT.NEXTVAL,?,?,?,?)";
+		String sql="INSERT INTO PRODUCT(PRODUCTNUM, PRODUCTNAME, PRODUCTQUNT, PRODUCTPRICE, PRODUCTSELLER) VALUES(SEQ_PRODUCT.NEXTVAL,?,?,?,?)";
 		
 		try {
 			psmt=conn.prepareStatement(sql);

@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import co.mask.cart.web.BootPay;
 import co.mask.cart.web.CartDelete;
 import co.mask.cart.web.CartView;
+import co.mask.cart.web.InputCart;
 import co.mask.cart.web.NonMemberBootPay;
 import co.mask.cart.web.NonMemberCart;
+import co.mask.cart.web.NonMemberCartDel;
 import co.mask.join.web.IdCheck;
 import co.mask.join.web.Join;
 import co.mask.join.web.JoinForm;
@@ -62,6 +64,8 @@ public class FrontController2 extends HttpServlet {
 		map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
 		map.put("/nonMemberBootPay.do", new NonMemberBootPay()); // 비회원 결제
 		map.put("/nonMemberCart.do", new NonMemberCart()); // 비회원 장바구니
+		map.put("/inputCart.do", new InputCart()); // cart에 담기
+		map.put("/nonMemberCartDel.do", new NonMemberCartDel()); //비회원 장바구니 삭제기능
 		//Sell
 		map.put("/buyerView.do", new BuyerView()); // 판매 내역 리스트 (구매자)
 		map.put("/sellInsert.do", new SellInsert()); // 판매 내역 입력
