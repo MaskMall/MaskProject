@@ -65,9 +65,12 @@ th {
 		frm.submit();
 	}
 	function DeleteProduct(str) {
-		frm.productNum.value = str;
-		frm.action = "cartDelete.do";
-		frm.submit();
+		var yn = confirm("삭제하시겠습니까?")
+		if(yn) {
+			frm.productNum.value = str;
+			frm.action = "nonMemberCartDel.do";
+			frm.submit();
+		}
 	}
 </script>
 </head>
