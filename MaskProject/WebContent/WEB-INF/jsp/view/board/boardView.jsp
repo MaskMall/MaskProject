@@ -55,7 +55,7 @@ function updateBoard(str){
 			<h1>문의글 내용보기</h1>
 		</div>
 		<form id="frm" name="frm" method="post">
-		<table class="table table-hover" border="1">
+		<table  border="1">
 			<tr>
 				<th>게시글번호</th>
 				<th>글쓴이</th>
@@ -78,6 +78,5 @@ function updateBoard(str){
 		<button type="submit" onclick="deleteBoard('${vo.boardNumber}')">삭제</button>&nbsp;&nbsp;&nbsp; 
 		<input type="button" onclick="location.href = 'boardListForm.do'" value="목록">
 	</div>
-
 </body>
 </html>

@@ -42,6 +42,7 @@ public class BoardDao extends DAO {
 				vo.setBoardContent(rs.getString("boardcontent"));
 				vo.setBoardDate(rs.getDate("boarddate"));
 				vo.setBoardValue(rs.getString("boardvalue"));
+				vo.setBoardHit(rs.getInt("boardhit"));
 				list.add(vo);
 			}
 		} catch (SQLException e) {
@@ -136,6 +137,15 @@ public class BoardDao extends DAO {
 
 	public BoardVo select(BoardVo vo) {
 		String sql = "SELECT * FROM BOARD WHERE BOARDNUMBER=?";
+		String sql2 = "UPDATE BOARD SET BOARDHIT = BOARDHIT + 1 WHERE BOARDNUMBER = ?";
+		try {
+			psmt = conn.prepareStatement(sql2);
+			psmt.setInt(1, vo.getBoardNumber());		
+			rs = psmt.executeQuery();		
+		}
+		catch (SQLException e1) {
+			e1.printStackTrace();
+		}
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, vo.getBoardNumber());
@@ -174,7 +184,27 @@ public class BoardDao extends DAO {
 		}
 		
 		
+		
 		return n;
 	}
 
+	
+//	public int boardHit(BoardVo vo) {
+//		int n = 0;
+//		String sql = "UPDATE BOARD SET BOARDHIT = BOARDHIT + 1 WHERE BOARDNUMBER = ?";
+//		
+//		try {
+//			psmt = conn.prepareStatement(sql);
+//			vo.setBoardNumber(rs.getInt("boardnumber"));
+//			n = psmt.executeUpdate();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return n;
+//	}
+	
+	
+	
 }

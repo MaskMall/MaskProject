@@ -16,7 +16,9 @@ public class BoardView implements Command {
 		BoardVo vo = new BoardVo();
 		vo.setBoardNumber(Integer.parseInt(request.getParameter("row")));
 		
+		
 		dao.select(vo);
+
 		request.setAttribute("vo", vo);
 		
 		return "view/board/boardView";
